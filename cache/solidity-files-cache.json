@@ -1,7 +1,7 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "/home/buhrmi/contracts/contracts/openzeppelin/access/AccessControl.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/access/AccessControl.sol": {
       "lastModificationDate": 1611513220080,
       "contentHash": "80fba54514bd6969409886d7f3d9ec78",
       "sourceName": "contracts/openzeppelin/access/AccessControl.sol",
@@ -39,7 +39,7 @@
         "AccessControl"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/utils/EnumerableSet.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/utils/EnumerableSet.sol": {
       "lastModificationDate": 1611513220080,
       "contentHash": "7d5806dec94de00ddcfb1e9fdd6c9545",
       "sourceName": "contracts/openzeppelin/utils/EnumerableSet.sol",
@@ -73,7 +73,7 @@
         "EnumerableSet"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/utils/Address.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/utils/Address.sol": {
       "lastModificationDate": 1611513220080,
       "contentHash": "72d77402f6854b7ccf9af282e805f292",
       "sourceName": "contracts/openzeppelin/utils/Address.sol",
@@ -107,7 +107,7 @@
         "Address"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/GSN/Context.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/GSN/Context.sol": {
       "lastModificationDate": 1611513220080,
       "contentHash": "2adbd82f6d055a4751566d4671512b03",
       "sourceName": "contracts/openzeppelin/GSN/Context.sol",
@@ -141,7 +141,7 @@
         "Context"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/presets/ERC721PresetMinterPauserAutoId.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/presets/ERC721PresetMinterPauserAutoId.sol": {
       "lastModificationDate": 1611513220090,
       "contentHash": "88fa53d283b53c53e143c9fe1c191a18",
       "sourceName": "contracts/openzeppelin/presets/ERC721PresetMinterPauserAutoId.sol",
@@ -182,7 +182,7 @@
         "ERC721PresetMinterPauserAutoId"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/utils/Counters.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/utils/Counters.sol": {
       "lastModificationDate": 1611513220080,
       "contentHash": "304a56eb1322144704fb39f8c7e6d722",
       "sourceName": "contracts/openzeppelin/utils/Counters.sol",
@@ -218,7 +218,7 @@
         "Counters"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/token/ERC721/ERC721.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/token/ERC721/ERC721.sol": {
       "lastModificationDate": 1611514037210,
       "contentHash": "4f0688c27494856a46da1bd1dd77342f",
       "sourceName": "contracts/openzeppelin/token/ERC721/ERC721.sol",
@@ -264,7 +264,7 @@
         "ERC721"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/token/ERC721/ERC721Burnable.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/token/ERC721/ERC721Burnable.sol": {
       "lastModificationDate": 1611513220080,
       "contentHash": "36eba6b896e5b04a5a71f02ce01087fe",
       "sourceName": "contracts/openzeppelin/token/ERC721/ERC721Burnable.sol",
@@ -301,7 +301,7 @@
         "ERC721Burnable"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/token/ERC721/ERC721Pausable.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/token/ERC721/ERC721Pausable.sol": {
       "lastModificationDate": 1611513220080,
       "contentHash": "46f79ddd76e77a7c5bf841b830d0ed1e",
       "sourceName": "contracts/openzeppelin/token/ERC721/ERC721Pausable.sol",
@@ -338,7 +338,7 @@
         "ERC721Pausable"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/math/SafeMath.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/math/SafeMath.sol": {
       "lastModificationDate": 1611513220100,
       "contentHash": "4d29a22b28b7ec0e89c3cdf1c5e72b83",
       "sourceName": "contracts/openzeppelin/math/SafeMath.sol",
@@ -372,7 +372,7 @@
         "SafeMath"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/token/ERC721/IERC721.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/token/ERC721/IERC721.sol": {
       "lastModificationDate": 1611513220090,
       "contentHash": "b7983b35319221315a13595768746bdf",
       "sourceName": "contracts/openzeppelin/token/ERC721/IERC721.sol",
@@ -408,7 +408,7 @@
         "IERC721"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/token/ERC721/IERC721Metadata.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/token/ERC721/IERC721Metadata.sol": {
       "lastModificationDate": 1611513220090,
       "contentHash": "370e7a48f316401b5063bcb604843e1b",
       "sourceName": "contracts/openzeppelin/token/ERC721/IERC721Metadata.sol",
@@ -444,7 +444,7 @@
         "IERC721Metadata"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/token/ERC721/IERC721Enumerable.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/token/ERC721/IERC721Enumerable.sol": {
       "lastModificationDate": 1611513220090,
       "contentHash": "eaebc3874248c26f6ea0b13b9a140a94",
       "sourceName": "contracts/openzeppelin/token/ERC721/IERC721Enumerable.sol",
@@ -480,7 +480,7 @@
         "IERC721Enumerable"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/token/ERC721/IERC721Receiver.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/token/ERC721/IERC721Receiver.sol": {
       "lastModificationDate": 1611513220090,
       "contentHash": "fad0b3f4424bdbb4b35467b29ea8d334",
       "sourceName": "contracts/openzeppelin/token/ERC721/IERC721Receiver.sol",
@@ -514,7 +514,7 @@
         "IERC721Receiver"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/introspection/ERC165.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/introspection/ERC165.sol": {
       "lastModificationDate": 1611513220080,
       "contentHash": "1fdb418b30c8564d01d922c285fa6ee6",
       "sourceName": "contracts/openzeppelin/introspection/ERC165.sol",
@@ -550,7 +550,7 @@
         "ERC165"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/utils/EnumerableMap.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/utils/EnumerableMap.sol": {
       "lastModificationDate": 1611513220080,
       "contentHash": "8f02d41c25552d7894bdd98db412b9b0",
       "sourceName": "contracts/openzeppelin/utils/EnumerableMap.sol",
@@ -584,7 +584,7 @@
         "EnumerableMap"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/utils/Strings.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/utils/Strings.sol": {
       "lastModificationDate": 1611513220100,
       "contentHash": "32edba478e719cc27c3ec096284a44d6",
       "sourceName": "contracts/openzeppelin/utils/Strings.sol",
@@ -618,7 +618,7 @@
         "Strings"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/introspection/IERC165.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/introspection/IERC165.sol": {
       "lastModificationDate": 1611513220090,
       "contentHash": "0d62a8380952235f135dae91590f90a3",
       "sourceName": "contracts/openzeppelin/introspection/IERC165.sol",
@@ -652,7 +652,7 @@
         "IERC165"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/utils/Pausable.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/utils/Pausable.sol": {
       "lastModificationDate": 1611513220090,
       "contentHash": "8e1426287776ef63005695dfc289ec56",
       "sourceName": "contracts/openzeppelin/utils/Pausable.sol",
@@ -688,7 +688,7 @@
         "Pausable"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/token/ERC20/ERC20Pausable.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/token/ERC20/ERC20Pausable.sol": {
       "lastModificationDate": 1611513220080,
       "contentHash": "42c0638e45b2c33154488610fe3091fe",
       "sourceName": "contracts/openzeppelin/token/ERC20/ERC20Pausable.sol",
@@ -725,7 +725,7 @@
         "ERC20Pausable"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/token/ERC20/ERC20.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/token/ERC20/ERC20.sol": {
       "lastModificationDate": 1611513220080,
       "contentHash": "1d93743f6ca9d2ecf9b3c26718faf610",
       "sourceName": "contracts/openzeppelin/token/ERC20/ERC20.sol",
@@ -763,7 +763,7 @@
         "ERC20"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/token/ERC20/IERC20.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/token/ERC20/IERC20.sol": {
       "lastModificationDate": 1611513220090,
       "contentHash": "e0a41531d159d3a32f84b7a3ecf9fabb",
       "sourceName": "contracts/openzeppelin/token/ERC20/IERC20.sol",
@@ -797,7 +797,7 @@
         "IERC20"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/token/ERC20/ERC20Snapshot.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/token/ERC20/ERC20Snapshot.sol": {
       "lastModificationDate": 1611513220080,
       "contentHash": "1d275c09f45d34743142f399a40258a1",
       "sourceName": "contracts/openzeppelin/token/ERC20/ERC20Snapshot.sol",
@@ -836,7 +836,7 @@
         "ERC20Snapshot"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/utils/Arrays.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/utils/Arrays.sol": {
       "lastModificationDate": 1611513220080,
       "contentHash": "1dbebf76b7e090e7b226ed3fcc29058b",
       "sourceName": "contracts/openzeppelin/utils/Arrays.sol",
@@ -872,7 +872,7 @@
         "Arrays"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/math/Math.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/math/Math.sol": {
       "lastModificationDate": 1611513220090,
       "contentHash": "e5c844515b04deabacef7eb872abc384",
       "sourceName": "contracts/openzeppelin/math/Math.sol",
@@ -906,7 +906,7 @@
         "Math"
       ]
     },
-    "/home/buhrmi/contracts/contracts/SimpWars.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/SimpWars.sol": {
       "lastModificationDate": 1611513783120,
       "contentHash": "2595aff3ac1881b47d5175422108681c",
       "sourceName": "contracts/SimpWars.sol",
@@ -946,7 +946,7 @@
         "SimpWars"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/access/Ownable.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/access/Ownable.sol": {
       "lastModificationDate": 1611513220090,
       "contentHash": "38c56382c57a9e9dab92cee051155870",
       "sourceName": "contracts/openzeppelin/access/Ownable.sol",
@@ -982,7 +982,7 @@
         "Ownable"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/proxy/ProxyAdmin.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/proxy/ProxyAdmin.sol": {
       "lastModificationDate": 1611513220090,
       "contentHash": "1fb4daec0de5a54ffe01e92fc9cc5aa4",
       "sourceName": "contracts/openzeppelin/proxy/ProxyAdmin.sol",
@@ -1019,7 +1019,7 @@
         "ProxyAdmin"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/proxy/TransparentUpgradeableProxy.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/proxy/TransparentUpgradeableProxy.sol": {
       "lastModificationDate": 1611513220100,
       "contentHash": "c6d0338de5744b70a7c6cdcda5310a99",
       "sourceName": "contracts/openzeppelin/proxy/TransparentUpgradeableProxy.sol",
@@ -1055,7 +1055,7 @@
         "TransparentUpgradeableProxy"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/proxy/UpgradeableProxy.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/proxy/UpgradeableProxy.sol": {
       "lastModificationDate": 1611513220100,
       "contentHash": "686980f2a53d793b815368f676364b8e",
       "sourceName": "contracts/openzeppelin/proxy/UpgradeableProxy.sol",
@@ -1092,7 +1092,7 @@
         "UpgradeableProxy"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/proxy/Proxy.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/proxy/Proxy.sol": {
       "lastModificationDate": 1611513220090,
       "contentHash": "a6f1021015ca14abd4852d6a1e22861c",
       "sourceName": "contracts/openzeppelin/proxy/Proxy.sol",
@@ -1126,7 +1126,7 @@
         "Proxy"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/token/ERC777/ERC777.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/token/ERC777/ERC777.sol": {
       "lastModificationDate": 1611513220090,
       "contentHash": "908206b190e60731e24ef3e0a5c6f6a2",
       "sourceName": "contracts/openzeppelin/token/ERC777/ERC777.sol",
@@ -1169,7 +1169,7 @@
         "ERC777"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/token/ERC777/IERC777.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/token/ERC777/IERC777.sol": {
       "lastModificationDate": 1611513220090,
       "contentHash": "5833aafefffbdbdb5f5ee567a3f51b86",
       "sourceName": "contracts/openzeppelin/token/ERC777/IERC777.sol",
@@ -1203,7 +1203,7 @@
         "IERC777"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/token/ERC777/IERC777Recipient.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/token/ERC777/IERC777Recipient.sol": {
       "lastModificationDate": 1611513220090,
       "contentHash": "c611b2349e7afbb03e4fd314878861e0",
       "sourceName": "contracts/openzeppelin/token/ERC777/IERC777Recipient.sol",
@@ -1237,7 +1237,7 @@
         "IERC777Recipient"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/token/ERC777/IERC777Sender.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/token/ERC777/IERC777Sender.sol": {
       "lastModificationDate": 1611513220090,
       "contentHash": "c59a76b8a23eaef6f259de54f672d59e",
       "sourceName": "contracts/openzeppelin/token/ERC777/IERC777Sender.sol",
@@ -1271,7 +1271,7 @@
         "IERC777Sender"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/introspection/IERC1820Registry.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/introspection/IERC1820Registry.sol": {
       "lastModificationDate": 1611513220090,
       "contentHash": "820888c202bc007f6112423ee95b9cf0",
       "sourceName": "contracts/openzeppelin/introspection/IERC1820Registry.sol",
@@ -1305,7 +1305,7 @@
         "IERC1820Registry"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/token/ERC20/SafeERC20.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/token/ERC20/SafeERC20.sol": {
       "lastModificationDate": 1611513220100,
       "contentHash": "33e22842646d746e5c4124c2fdc051aa",
       "sourceName": "contracts/openzeppelin/token/ERC20/SafeERC20.sol",
@@ -1343,7 +1343,7 @@
         "SafeERC20"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/token/ERC20/TokenTimelock.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/token/ERC20/TokenTimelock.sol": {
       "lastModificationDate": 1611513220100,
       "contentHash": "8c436bb9f5a3643ed1f64cf370c277f0",
       "sourceName": "contracts/openzeppelin/token/ERC20/TokenTimelock.sol",
@@ -1379,7 +1379,7 @@
         "TokenTimelock"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/GSN/GSNRecipientERC20Fee.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/GSN/GSNRecipientERC20Fee.sol": {
       "lastModificationDate": 1611513220090,
       "contentHash": "c8e2094331111d20cf525223560d67f1",
       "sourceName": "contracts/openzeppelin/GSN/GSNRecipientERC20Fee.sol",
@@ -1420,7 +1420,7 @@
         "__unstable__ERC20Owned"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/GSN/GSNRecipient.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/GSN/GSNRecipient.sol": {
       "lastModificationDate": 1611513220090,
       "contentHash": "b1c354497eceaa86f2f253502d5693b9",
       "sourceName": "contracts/openzeppelin/GSN/GSNRecipient.sol",
@@ -1458,7 +1458,7 @@
         "GSNRecipient"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/GSN/IRelayRecipient.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/GSN/IRelayRecipient.sol": {
       "lastModificationDate": 1611513220090,
       "contentHash": "0bf08baf48262eb41bc206529963621d",
       "sourceName": "contracts/openzeppelin/GSN/IRelayRecipient.sol",
@@ -1492,7 +1492,7 @@
         "IRelayRecipient"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/GSN/IRelayHub.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/GSN/IRelayHub.sol": {
       "lastModificationDate": 1611513220090,
       "contentHash": "3d76829bda93b091eafa44820d8a7596",
       "sourceName": "contracts/openzeppelin/GSN/IRelayHub.sol",
@@ -1526,7 +1526,7 @@
         "IRelayHub"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/GSN/GSNRecipientSignature.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/GSN/GSNRecipientSignature.sol": {
       "lastModificationDate": 1611513220090,
       "contentHash": "cfa3c366a1a8c8b8411df236b763cc20",
       "sourceName": "contracts/openzeppelin/GSN/GSNRecipientSignature.sol",
@@ -1563,7 +1563,7 @@
         "GSNRecipientSignature"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/cryptography/ECDSA.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/cryptography/ECDSA.sol": {
       "lastModificationDate": 1611513220080,
       "contentHash": "06d35974124c53de900f77f0b35bb077",
       "sourceName": "contracts/openzeppelin/cryptography/ECDSA.sol",
@@ -1597,7 +1597,7 @@
         "ECDSA"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/token/ERC1155/ERC1155Receiver.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/token/ERC1155/ERC1155Receiver.sol": {
       "lastModificationDate": 1611513220080,
       "contentHash": "17e413fe28eee62a8d6e686fa9aec405",
       "sourceName": "contracts/openzeppelin/token/ERC1155/ERC1155Receiver.sol",
@@ -1634,7 +1634,7 @@
         "ERC1155Receiver"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/token/ERC1155/IERC1155Receiver.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/token/ERC1155/IERC1155Receiver.sol": {
       "lastModificationDate": 1611513220090,
       "contentHash": "27af002e8fc1118d099c99fc8852bb73",
       "sourceName": "contracts/openzeppelin/token/ERC1155/IERC1155Receiver.sol",
@@ -1670,7 +1670,7 @@
         "IERC1155Receiver"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/token/ERC1155/IERC1155.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/token/ERC1155/IERC1155.sol": {
       "lastModificationDate": 1611513220090,
       "contentHash": "cb9dc62067a205eeab4f390c72c7fe14",
       "sourceName": "contracts/openzeppelin/token/ERC1155/IERC1155.sol",
@@ -1706,7 +1706,7 @@
         "IERC1155"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/token/ERC1155/IERC1155MetadataURI.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/token/ERC1155/IERC1155MetadataURI.sol": {
       "lastModificationDate": 1611513220090,
       "contentHash": "9a313e25e2a837a50f7ae87017539457",
       "sourceName": "contracts/openzeppelin/token/ERC1155/IERC1155MetadataURI.sol",
@@ -1742,7 +1742,7 @@
         "IERC1155MetadataURI"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/token/ERC1155/ERC1155.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/token/ERC1155/ERC1155.sol": {
       "lastModificationDate": 1611513220080,
       "contentHash": "33e1c36142cb3c4c64b6d8321003b3a8",
       "sourceName": "contracts/openzeppelin/token/ERC1155/ERC1155.sol",
@@ -1784,7 +1784,7 @@
         "ERC1155"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/token/ERC1155/ERC1155Pausable.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/token/ERC1155/ERC1155Pausable.sol": {
       "lastModificationDate": 1611513220080,
       "contentHash": "90de6a370710a61994975feed325e093",
       "sourceName": "contracts/openzeppelin/token/ERC1155/ERC1155Pausable.sol",
@@ -1821,7 +1821,7 @@
         "ERC1155Pausable"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/presets/ERC1155PresetMinterPauser.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/presets/ERC1155PresetMinterPauser.sol": {
       "lastModificationDate": 1611513220080,
       "contentHash": "18c0222a0b261ae01068e92a59f3964d",
       "sourceName": "contracts/openzeppelin/presets/ERC1155PresetMinterPauser.sol",
@@ -1861,7 +1861,7 @@
         "ERC1155PresetMinterPauser"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/token/ERC1155/ERC1155Burnable.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/token/ERC1155/ERC1155Burnable.sol": {
       "lastModificationDate": 1611513220080,
       "contentHash": "e9e23a67a9d60cd0e6d133323b704b8d",
       "sourceName": "contracts/openzeppelin/token/ERC1155/ERC1155Burnable.sol",
@@ -1897,7 +1897,7 @@
         "ERC1155Burnable"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/token/ERC1155/ERC1155Holder.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/token/ERC1155/ERC1155Holder.sol": {
       "lastModificationDate": 1611513220080,
       "contentHash": "ca5387e1c39109d459f2ff8f22deafd4",
       "sourceName": "contracts/openzeppelin/token/ERC1155/ERC1155Holder.sol",
@@ -1933,7 +1933,7 @@
         "ERC1155Holder"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/token/ERC721/ERC721Holder.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/token/ERC721/ERC721Holder.sol": {
       "lastModificationDate": 1611513220080,
       "contentHash": "683d46b8e6a400847a831fc9623233cf",
       "sourceName": "contracts/openzeppelin/token/ERC721/ERC721Holder.sol",
@@ -1969,7 +1969,7 @@
         "ERC721Holder"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/token/ERC20/ERC20Burnable.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/token/ERC20/ERC20Burnable.sol": {
       "lastModificationDate": 1611513220080,
       "contentHash": "f4a80522fa4ffe888e0cfbd5ba56de6b",
       "sourceName": "contracts/openzeppelin/token/ERC20/ERC20Burnable.sol",
@@ -2006,7 +2006,7 @@
         "ERC20Burnable"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/presets/ERC20PresetMinterPauser.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/presets/ERC20PresetMinterPauser.sol": {
       "lastModificationDate": 1611513220080,
       "contentHash": "79adb927bc2f4af9231ff1951ee7a707",
       "sourceName": "contracts/openzeppelin/presets/ERC20PresetMinterPauser.sol",
@@ -2046,7 +2046,7 @@
         "ERC20PresetMinterPauser"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/payment/PaymentSplitter.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/payment/PaymentSplitter.sol": {
       "lastModificationDate": 1611513220090,
       "contentHash": "d7a2cefa8bcd057cbd1266070ca314ed",
       "sourceName": "contracts/openzeppelin/payment/PaymentSplitter.sol",
@@ -2083,7 +2083,7 @@
         "PaymentSplitter"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/payment/escrow/Escrow.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/payment/escrow/Escrow.sol": {
       "lastModificationDate": 1611513220090,
       "contentHash": "ff1d5619edddf81b163071835903272d",
       "sourceName": "contracts/openzeppelin/payment/escrow/Escrow.sol",
@@ -2121,7 +2121,7 @@
         "Escrow"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/payment/PullPayment.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/payment/PullPayment.sol": {
       "lastModificationDate": 1611513220090,
       "contentHash": "629b6b6c6ce2547851a7a650e1336380",
       "sourceName": "contracts/openzeppelin/payment/PullPayment.sol",
@@ -2157,7 +2157,7 @@
         "PullPayment"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/payment/escrow/ConditionalEscrow.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/payment/escrow/ConditionalEscrow.sol": {
       "lastModificationDate": 1611513220080,
       "contentHash": "aa3e8c91094948828e236ec0a5603e58",
       "sourceName": "contracts/openzeppelin/payment/escrow/ConditionalEscrow.sol",
@@ -2193,7 +2193,7 @@
         "ConditionalEscrow"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/payment/escrow/RefundEscrow.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/payment/escrow/RefundEscrow.sol": {
       "lastModificationDate": 1611513220090,
       "contentHash": "3a60b76e68f4a9ddd7486fc020081120",
       "sourceName": "contracts/openzeppelin/payment/escrow/RefundEscrow.sol",
@@ -2229,7 +2229,7 @@
         "RefundEscrow"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/access/TimelockController.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/access/TimelockController.sol": {
       "lastModificationDate": 1611513220100,
       "contentHash": "d1ad44453ff9ce36dfcfa4f5dd243d19",
       "sourceName": "contracts/openzeppelin/access/TimelockController.sol",
@@ -2266,7 +2266,7 @@
         "TimelockController"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/token/ERC20/ERC20Capped.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/token/ERC20/ERC20Capped.sol": {
       "lastModificationDate": 1611513220080,
       "contentHash": "4cef998c21c9cfceba627ea47b5a5b28",
       "sourceName": "contracts/openzeppelin/token/ERC20/ERC20Capped.sol",
@@ -2302,7 +2302,7 @@
         "ERC20Capped"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/cryptography/MerkleProof.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/cryptography/MerkleProof.sol": {
       "lastModificationDate": 1611513220090,
       "contentHash": "44bd823687d58263d3b1da555235f93e",
       "sourceName": "contracts/openzeppelin/cryptography/MerkleProof.sol",
@@ -2336,7 +2336,7 @@
         "MerkleProof"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/introspection/ERC165Checker.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/introspection/ERC165Checker.sol": {
       "lastModificationDate": 1611513220080,
       "contentHash": "33e1e632b2a4fc45f845e42a99bc56a4",
       "sourceName": "contracts/openzeppelin/introspection/ERC165Checker.sol",
@@ -2370,7 +2370,7 @@
         "ERC165Checker"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/introspection/ERC1820Implementer.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/introspection/ERC1820Implementer.sol": {
       "lastModificationDate": 1611513220080,
       "contentHash": "a44e936347d0c6d6aeb7b0acf404d175",
       "sourceName": "contracts/openzeppelin/introspection/ERC1820Implementer.sol",
@@ -2406,7 +2406,7 @@
         "ERC1820Implementer"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/introspection/IERC1820Implementer.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/introspection/IERC1820Implementer.sol": {
       "lastModificationDate": 1611513220090,
       "contentHash": "663251cfa9462cad6003a81bc876c938",
       "sourceName": "contracts/openzeppelin/introspection/IERC1820Implementer.sol",
@@ -2440,7 +2440,7 @@
         "IERC1820Implementer"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/math/SignedSafeMath.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/math/SignedSafeMath.sol": {
       "lastModificationDate": 1611513220100,
       "contentHash": "159169e078460f380436878421b73431",
       "sourceName": "contracts/openzeppelin/math/SignedSafeMath.sol",
@@ -2474,7 +2474,7 @@
         "SignedSafeMath"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/proxy/Initializable.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/proxy/Initializable.sol": {
       "lastModificationDate": 1611513220090,
       "contentHash": "99bd69d93b6e25a9cdf9c04550e1780f",
       "sourceName": "contracts/openzeppelin/proxy/Initializable.sol",
@@ -2508,7 +2508,7 @@
         "Initializable"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/utils/Create2.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/utils/Create2.sol": {
       "lastModificationDate": 1611513220080,
       "contentHash": "79d4a7e7426effc35937c12ad475b2dc",
       "sourceName": "contracts/openzeppelin/utils/Create2.sol",
@@ -2542,7 +2542,7 @@
         "Create2"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/utils/ReentrancyGuard.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/utils/ReentrancyGuard.sol": {
       "lastModificationDate": 1611513220090,
       "contentHash": "1c60f58cee45c61469e1aea31e4dd879",
       "sourceName": "contracts/openzeppelin/utils/ReentrancyGuard.sol",
@@ -2576,7 +2576,7 @@
         "ReentrancyGuard"
       ]
     },
-    "/home/buhrmi/contracts/contracts/openzeppelin/utils/SafeCast.sol": {
+    "/home/buhrmi/simpwars-contracts/contracts/openzeppelin/utils/SafeCast.sol": {
       "lastModificationDate": 1611513220100,
       "contentHash": "c227dcf457382aabf2d78218f6457799",
       "sourceName": "contracts/openzeppelin/utils/SafeCast.sol",
