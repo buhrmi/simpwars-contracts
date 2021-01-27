@@ -907,8 +907,8 @@
       ]
     },
     "/home/buhrmi/simpwars-contracts/contracts/SimpWars.sol": {
-      "lastModificationDate": 1611513783120,
-      "contentHash": "2595aff3ac1881b47d5175422108681c",
+      "lastModificationDate": 1611724824168,
+      "contentHash": "af93a034c295a11b24ad8fbb038d3689",
       "sourceName": "contracts/SimpWars.sol",
       "solcConfig": {
         "version": "0.7.3",
@@ -942,6 +942,7 @@
       ],
       "artifacts": [
         "OwnableDelegateProxy",
+        "Pricing",
         "ProxyRegistry",
         "SimpWars"
       ]
