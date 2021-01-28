@@ -907,8 +907,8 @@
       ]
     },
     "/home/buhrmi/simpwars-contracts/contracts/SimpWars.sol": {
-      "lastModificationDate": 1611724824168,
-      "contentHash": "af93a034c295a11b24ad8fbb038d3689",
+      "lastModificationDate": 1611809277391,
+      "contentHash": "7a351070a2b008413199e435ab4bc24a",
       "sourceName": "contracts/SimpWars.sol",
       "solcConfig": {
         "version": "0.7.3",
@@ -2609,6 +2609,40 @@
       ],
       "artifacts": [
         "SafeCast"
+      ]
+    },
+    "/home/buhrmi/simpwars-contracts/contracts/AlternativePricing.sol": {
+      "lastModificationDate": 1611791579431,
+      "contentHash": "3944abdbea04ebfcd75134671d0d2f02",
+      "sourceName": "contracts/AlternativePricing.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "AltPricing"
       ]
     }
   }

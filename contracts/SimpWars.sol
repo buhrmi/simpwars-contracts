@@ -1,10 +1,15 @@
 // SPDX-License-Identifier: WTFPL
 
+// SimpWars - Simps on the Blockchain
+// Created by Stefan Buhrmester
+// Visit https://simpwars.net for more information
+
 pragma solidity >=0.6.0 <0.8.0;
 
 import "./openzeppelin/token/ERC721/ERC721.sol";
 import "./openzeppelin/access/Ownable.sol";
 import "./openzeppelin/math/SafeMath.sol";
+
 
 contract OwnableDelegateProxy {}
 
@@ -30,10 +35,6 @@ contract Pricing {
 
         return effectivePrice;
     }
-
-    function ceil(uint256 a, uint256 m) public pure returns (uint256) {
-        return ((a + m - 1) / m) * m;
-    }
 }
 
 contract SimpWars is ERC721, Ownable {
@@ -47,24 +48,24 @@ contract SimpWars is ERC721, Ownable {
     string public contractURI = "https://simpwars.loca.lt"; // Rinkeby
     //string public contractURI = "https://simpwars.net"; // Mainnet
     
-    constructor() ERC721("SimpWars", "SIMPS")  {
-        _setBaseURI("https://simpwars.loca.lt/metadata/twitch/"); // Rinkeby
-        //_setBaseURI("https://simpwars.net/metadata/twitch/"); // Mainnet
+    constructor() ERC721("SimpWars", "SIMPS") {
+      _setBaseURI("https://simpwars.loca.lt/metadata/twitch/"); // Rinkeby
+      //_setBaseURI("https://simpwars.net/metadata/twitch/"); // Mainnet
     }
 
     function price(uint256 simpID) public view returns (uint256) {
         return pricer.getPrice(simpID);
     }
 
-    function updatePricer(Pricing newPricer) public onlyOwner {
+    function setPricer(Pricing newPricer) public onlyOwner {
         pricer = newPricer;
     }
 
-    function updateBaseURI(string memory newURI) public onlyOwner {
+    function setBaseURI(string memory newURI) public onlyOwner {
         _setBaseURI(newURI);
     }
     
-    function updateContractURI(string memory newURI) public onlyOwner {
+    function setContractURI(string memory newURI) public onlyOwner {
         contractURI = newURI;
     }
     
@@ -77,7 +78,7 @@ contract SimpWars is ERC721, Ownable {
         // Reimburse buyer if paid too much
         msg.sender.transfer(msg.value.sub(effectivePrice));
          
-        // Mint the token
+        // Mint the ERC721 Token
         _mint(msg.sender, streamerID);
     }
     
