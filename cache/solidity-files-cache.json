@@ -907,8 +907,8 @@
       ]
     },
     "/home/buhrmi/simpwars-contracts/contracts/SimpWars.sol": {
-      "lastModificationDate": 1611809277391,
-      "contentHash": "7a351070a2b008413199e435ab4bc24a",
+      "lastModificationDate": 1612078819770,
+      "contentHash": "90e0a3b1da270264d92fa5d17fa6f3ee",
       "sourceName": "contracts/SimpWars.sol",
       "solcConfig": {
         "version": "0.7.3",
@@ -933,6 +933,7 @@
         }
       },
       "imports": [
+        "hardhat/console.sol",
         "./openzeppelin/token/ERC721/ERC721.sol",
         "./openzeppelin/access/Ownable.sol",
         "./openzeppelin/math/SafeMath.sol"
@@ -2643,6 +2644,40 @@
       ],
       "artifacts": [
         "AltPricing"
+      ]
+    },
+    "/home/buhrmi/simpwars-contracts/node_modules/hardhat/console.sol": {
+      "lastModificationDate": 1611513211560,
+      "contentHash": "cc4777addd464ea56fa35b1c45df0591",
+      "sourceName": "hardhat/console.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.22 <0.9.0"
+      ],
+      "artifacts": [
+        "console"
       ]
     }
   }

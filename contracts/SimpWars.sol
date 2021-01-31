@@ -18,21 +18,21 @@ contract ProxyRegistry {
 }
 
 contract Pricing {
-    function price(uint256 streamerID, uint blocknumber) public view returns (uint256) {
-        return uint256(keccak256(abi.encodePacked(streamerID, blockhash(blocknumber)))) % 5 ether;
+    function price(uint256 simpID, uint256 blocknumber) public pure returns (uint256) {
+        return uint256(keccak256(abi.encodePacked(simpID, blocknumber))) % 5 ether;
     }
 
-    function price(uint256 streamerID) public view returns (uint256) {
-        return price(streamerID, block.number);
+    function price(uint256 simpID) public view returns (uint256) {
+        return price(simpID, block.number);
     }
 
     function getPrice(uint256 simpID) public view returns (uint256) {
         uint256 effectivePrice = price(simpID);
-
+        
         // If the price was lower in previous block, use the price of previous block
         uint256 prevPrice = price(simpID, block.number - 1);
         if (prevPrice < effectivePrice) effectivePrice = prevPrice;
-
+        
         return effectivePrice;
     }
 }
@@ -69,17 +69,17 @@ contract SimpWars is ERC721, Ownable {
         contractURI = newURI;
     }
     
-    function purchase(uint256 streamerID) public payable {
-        uint256 effectivePrice = price(streamerID);
-
+    function purchase(uint256 simpID) public payable {
+        uint256 effectivePrice = price(simpID);
+        
         // Forward payment to contract owner
         payable(owner()).transfer(effectivePrice);
-         
+
         // Reimburse buyer if paid too much
         msg.sender.transfer(msg.value.sub(effectivePrice));
          
         // Mint the ERC721 Token
-        _mint(msg.sender, streamerID);
+        _mint(msg.sender, simpID);
     }
     
     function isApprovedForAll(address owner, address operator) 

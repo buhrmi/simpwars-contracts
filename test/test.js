@@ -1,21 +1,25 @@
 const { expect } = require("chai");
+const Web3 = require("web3")
+var abi = require('ethereumjs-abi');
+// const { ethers } = require("ethers");
 
 describe("SimpWars", function() {
-  it("should be possible to purchase simps for correct price", async function() {
+  it("should send excess ether back", async function() {
     const address = (await ethers.getSigners())[0].address;
 
     const SimpWars = await ethers.getContractFactory("SimpWars");
     const simpwars = await SimpWars.deploy();
     
-    await simpwars.deployed();
-    const price = await simpwars.price(2387476);
-    const priceAsHex = price.toHexString();
+    const contract = await simpwars.deployed();
 
-    await simpwars.purchase(2387476, {value: priceAsHex})
+    
+    await contract.purchase(2387476, {value: Web3.utils.toWei('5', 'ether')})
   
-    const owner = await simpwars.ownerOf(2387476);
+    const owner = await contract.ownerOf(2387476);
 
     expect(owner).to.equal(address);
+    expect(await ethers.provider.getBalance(contract.address)).to.equal(0)
+
   });
 
   it("should not be possible to purchase simps at a too low price", async function() {
@@ -52,6 +56,27 @@ describe("SimpWars", function() {
 
     expect(url).to.equal('https://simpwars.loca.lt/metadata/twitch/2387476')
   });
+
+  it("price should be calculated the same with javascript", async function() {
+    const SimpWars = await ethers.getContractFactory("SimpWars");
+    const simpwars = await SimpWars.deploy();
+    const provider = ethers.provider
+    await simpwars.deployed();
+
+    const streamerID =2387476
+    const price = await simpwars.price(streamerID);
+  
+    const maxPrice = new Web3.utils.BN(Web3.utils.toWei('5', 'ether'))
+    
+    const blockNumber = await provider.getBlockNumber()
+
+    let shouldPrice = Web3.utils.toBN(abi.soliditySHA3(["int", "int"],[streamerID, blockNumber]).toString('hex')).mod(maxPrice)
+    let prevPrice = Web3.utils.toBN(abi.soliditySHA3(["int", "int"],[streamerID, blockNumber-1]).toString('hex')).mod(maxPrice)
+    
+    if (shouldPrice.cmp(prevPrice) == 1) shouldPrice = prevPrice;
+
+    expect(price.toHexString()).to.equal('0x' + shouldPrice.toString(16).padStart(16,'0'))
+  })
 
   it("pricing function can be swapped", async function() {
     const address = (await ethers.getSigners())[0].address;
