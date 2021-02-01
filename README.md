@@ -23,3 +23,11 @@ you can then verify the contract on Etherscan with
 ```
 npx hardhat verify --network rinkeby DEPLOYED_CONTRACT_ADDRESS
 ```
+
+## Running tests
+
+The tests can be run with 
+
+```
+npx hardhat test
+```
