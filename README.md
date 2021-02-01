@@ -1,5 +1,7 @@
-# Simps on the Blockchain
+# Streamer Tokens
 
-This is the contract to track Simp ownership in [SimpWars](https://github.com/buhrmi/simpwars).
+This smart contract allows you to tokenize streamers on the Ethereum blockchain.
 
-It is not yet deployed. Deployment will be done live on stream some time in the future.
+A tokenized streamer is called a Simp.
+
+You can use Simps to play [SimpWars](https://github.com/buhrmi/simpwars)
