@@ -1,4 +1,4 @@
-# Streamer Tokens
+# Tokenized Streamers
 
 This smart contract allows you to tokenize streamers on the Ethereum blockchain.
 
