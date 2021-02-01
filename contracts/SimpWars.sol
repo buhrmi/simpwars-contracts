@@ -1,8 +1,6 @@
 // SPDX-License-Identifier: WTFPL
 
-// SimpWars - Simps on the Blockchain
-// Created by Stefan Buhrmester
-// Visit https://simpwars.net for more information
+// Tokenized Streamers
 
 pragma solidity >=0.6.0 <0.8.0;
 
@@ -37,7 +35,7 @@ contract Pricing {
     }
 }
 
-contract SimpWars is ERC721, Ownable {
+contract TokenizedStreamers is ERC721, Ownable {
     using SafeMath for uint256;
     
     Pricing pricer = new Pricing();
@@ -55,6 +53,14 @@ contract SimpWars is ERC721, Ownable {
 
     function price(uint256 simpID) public view returns (uint256) {
         return pricer.getPrice(simpID);
+    }
+
+    /**
+     * @dev Withdraw ether from this contract (Callable by owner)
+    */
+    function withdraw() onlyOwner public {
+        uint balance = address(this).balance;
+        msg.sender.transfer(balance);
     }
 
     function setPricer(Pricing newPricer) public onlyOwner {
