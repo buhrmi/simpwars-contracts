@@ -8,6 +8,8 @@ At the time of deploy, all Simps are unassigned and freely purchasable by whoeve
 
 You can do many things with Simps. For example, you can use them to play [SimpWars](https://github.com/buhrmi/simpwars), a game which is currently in development. Of course you can also just keep them as trophies and speculate on their value.
 
+The contract is not yet deployed. This will be done [live on Twitch](https://twitch.tv/buhrmi_tv) some time in the future.
+
 ## How to deploy
 
 This is a [Hardhat](https://hardhat.org) project. To deploy (for example on Rinkeby) run 
