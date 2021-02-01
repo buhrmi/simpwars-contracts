@@ -6,7 +6,7 @@ A tokenized streamer is called a Simp (I have invented this, please don't steal 
 
 At the time of deploy, all Simps are unassigned and freely purchasable by whoever wants them. Just pass the Twitch User ID to the `purchase` function of the contract and pay the required amount of Eth. You can use the `price` function to check the current price of a Simp (the price randomly fluctuates between 0 and 5 Eth and changes each block). If you submit too much Eth, the contract will send the remaining Eth back to you. No worries.
 
-You can do many things with Simps. For example, you can use them to play [SimpWars](https://github.com/buhrmi/simpwars), a game which is currently in development. Of course you can just keep them and speculate on their value.
+You can do many things with Simps. For example, you can use them to play [SimpWars](https://github.com/buhrmi/simpwars), a game which is currently in development. Of course you can also just keep them as trophies and speculate on their value.
 
 ## How to deploy
 
