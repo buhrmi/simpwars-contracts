@@ -1,6 +1,6 @@
 # Tokenized Streamers
 
-Welcome to Tokenized Streamers. This Tokenized Streamers smart contract allows anyone to tokenize Twitch streamers on the Ethereum blockchain and play with them in the great upcoming [SimpWars](https://github.com/buhrmi/simpwars).
+Welcome to Tokenized Streamers. This Tokenized Streamers smart contract allows anyone to tokenize Twitch streamers on the Ethereum blockchain and play with them in the upcoming great [SimpWars](https://github.com/buhrmi/simpwars).
 
 At the time of deployment, all streamers are unassigned and freely purchasable by whoever wants them. Just pass the Twitch User ID to the `purchase` function of the contract and pay the required amount of Eth. You can use the `price` function to check the current price of a streamer (the price randomly fluctuates between 0 and 5 Eth and changes each block). If you submit too much Eth, the contract will send the remaining Eth back to you. No worries.
 
