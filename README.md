@@ -1,8 +1,8 @@
 # Tokenized Streamers
 
-This smart contract allows you to tokenize streamers on the Ethereum blockchain.
+This smart contract tokenizes streamers on the Ethereum blockchain.
 
-A tokenized streamer is called a Simp.
+A tokenized streamer is called a Simp (I have invented this, please don't steal this OK thanks)
 
 You can use Simps to play [SimpWars](https://github.com/buhrmi/simpwars)
 
