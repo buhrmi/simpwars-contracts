@@ -1,12 +1,10 @@
 # Tokenized Streamers
 
-Welcome to Tokenized Streamers. This smart contract allows anyone to tokenize Twitch streamers on the Ethereum blockchain and play with them in the upcoming great [SimpWars](https://github.com/buhrmi/simpwars).
+Welcome to Tokenized Streamers. This smart contract allows anyone to tokenize Twitch streamers on the Ethereum blockchain. A tokenized streamer is called a simp. Simps are needed to participate in the great upcoming [SimpWars](https://github.com/buhrmi/simpwars).
 
-At the time of deployment, all streamers are unassigned and freely purchasable by whoever wants them. Just pass the Twitch User ID to the `purchase` function of the contract and pay the required amount of Eth. You can use the `price` function to check the current price of a streamer (the price randomly fluctuates between 0 and 5 Eth and changes each block). If you submit too much Eth, the contract will send the remaining Eth back to you. No worries.
+At the time of deployment, all streamers are unassigned and freely purchasable by whoever wants them. Just pass the Twitch User ID to the `purchase` function of the contract and pay the required amount of Eth. You can use the `price` function to check the current price of a streamer. The price randomly fluctuates between 0 and 5 Eth and changes each block. You have a three block window (around 30 seconds) to purchase a streamer after the price changes. Make sure to set a generous gas price to ensure that your transaction gets mined within this window. If you submit too much Eth, the contract will send the remaining Eth back to you.
 
-Once a streamer is tokenized, he will be your personal simp. You can do many things with your simps. For example, you can use them to play [SimpWars](https://github.com/buhrmi/simpwars), a game which is currently in development. Of course you can also just keep them as trophies and speculate on their value.
-
-The contract is not yet deployed. This will be done [live on Twitch](https://twitch.tv/buhrmi_tv) some time in the future.
+When you tokenize a streamer he will be your personal simp. You can do many things with your simps. For example, you can participate in the upcoming [SimpWars](https://github.com/buhrmi/simpwars), a game which is currently in development. You can also just keep them as trophies and speculate on their value.
 
 ## How to deploy
 
