@@ -106,4 +106,16 @@ describe("SimpWars", function() {
     expect(owner).to.equal(address);
   });
 
+
+  it("emits 10 upgrade tokens per day that can be claimed", async function() {
+    throw "not implemented"
+  });
+
+  it("allows upgrades from owner", async function() {
+    throw "not implemented"
+  });
+
+  it("allows upgrades from anyone", async function() {
+    throw "not implemented"
+  });
 });

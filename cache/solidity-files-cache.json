@@ -907,8 +907,8 @@
       ]
     },
     "/home/buhrmi/simpwars-contracts/contracts/SimpWars.sol": {
-      "lastModificationDate": 1612255898600,
-      "contentHash": "b45c1763d75657796226183436bd87d7",
+      "lastModificationDate": 1612259752110,
+      "contentHash": "959dfb65449a42caff6995e13df1f003",
       "sourceName": "contracts/SimpWars.sol",
       "solcConfig": {
         "version": "0.7.3",
@@ -2681,8 +2681,8 @@
       ]
     },
     "/home/buhrmi/simpwars-contracts/contracts/SimpUpgradeToken.sol": {
-      "lastModificationDate": 1612256293320,
-      "contentHash": "695adc0d60c538cf92752d788f53dfcc",
+      "lastModificationDate": 1612259387130,
+      "contentHash": "66367d7c59d8ef875ba6c508bc2b934b",
       "sourceName": "contracts/SimpUpgradeToken.sol",
       "solcConfig": {
         "version": "0.7.3",
@@ -2710,13 +2710,49 @@
         "./openzeppelin/math/SafeMath.sol",
         "./openzeppelin/token/ERC20/ERC20.sol",
         "./openzeppelin/GSN/Context.sol",
-        "./openzeppelin/token/ERC721/IERC721.sol"
+        "./ISimps.sol"
       ],
       "versionPragmas": [
         ">=0.6.0 <0.8.0"
       ],
       "artifacts": [
         "SimpUpgradeToken"
+      ]
+    },
+    "/home/buhrmi/simpwars-contracts/contracts/ISimps.sol": {
+      "lastModificationDate": 1612259381130,
+      "contentHash": "6161058fcb4ca8f939055204744643e5",
+      "sourceName": "contracts/ISimps.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./openzeppelin/token/ERC721/IERC721.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ISimps"
       ]
     }
   }
