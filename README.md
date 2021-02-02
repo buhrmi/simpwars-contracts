@@ -6,9 +6,9 @@ At the time of deployment, all streamers are unassigned and freely purchasable b
 
 ### Simp Upgrade Tokens
 
-Every 24 hours a simp emits 10 Simp Upgrade Tokens (SUT). You can use these tokens to upgrade your simps and make them more powerful.
+Every 24 hours all simps you hold emit 10 Simp Upgrade Tokens (SUT). You can burn these tokens to upgrade your simps and make them more powerful.
 
-To upgrade a simp, call the `upgrade` function with your simp ID and the amount of SUT you would like to use. You can only upgrade simps that you own yourself and simps you do not own that have `upgradeAccepted` set to true.
+To upgrade a simp, call the `upgrade` function with the simp ID and the amount of upgrade tokens you would like to burn. You can only upgrade simps that you own yourself and simps you do not own that have `upgradeAccepted` set to true.
 
 ## How to deploy
 
