@@ -44,7 +44,7 @@ contract SimpWars is ERC721, Ownable {
 
     mapping(uint => uint) public upgrades;
     mapping(uint => uint) public timestamps;
-    mapping(uint => bool) public upgradesAllowed;
+    mapping(uint => bool) public upgradesAccepted;
 
     event SimpUpgraded(uint indexed streamerId, uint256 amount);
 
@@ -65,24 +65,24 @@ contract SimpWars is ERC721, Ownable {
         return upgrades[_streamerId];
     }
 
-    function upgradesAccepted(uint256 _streamerId) public view returns (bool) {
-        return upgradesAllowed[_streamerId];
+    function upgradeAccepted(uint256 _streamerId) public view returns (bool) {
+        return upgradesAccepted[_streamerId];
     }
 
     function mintedTimestamp(uint256 _streamerId) public view returns (uint256) {
         return timestamps[_streamerId];
     }
 
-    function setUpgradeAllowed(uint256 _streamerId, bool allowed) public {
+    function setUpgradeAccepted(uint256 _streamerId, bool allowed) public {
         require(ownerOf(_streamerId) == msg.sender);
-        upgradesAllowed[_streamerId] = allowed;
+        upgradesAccepted[_streamerId] = allowed;
     }
 
     /**
      * @dev Upgrade the simp and burn the SimpUpgradeTokens 
     */
     function upgrade(uint256 _streamerId, uint256 amount) public {
-        require(ownerOf(_streamerId) == msg.sender || upgradesAllowed[_streamerId], "you don't have permission to upgrade this simp");
+        require(ownerOf(_streamerId) == msg.sender || upgradesAccepted[_streamerId], "you don't have permission to upgrade this simp");
         upgrades[_streamerId] = upgrades[_streamerId].add(amount);
         ERC20Burnable(sutAddress).transferFrom(msg.sender, address(this), amount);
         ERC20Burnable(sutAddress).burn(amount);
