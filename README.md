@@ -10,6 +10,10 @@ Every 24 hours all simps you hold emit 10 Simp Upgrade Tokens (SUT). You can bur
 
 To upgrade a simp, call the `upgrade` function with the simp ID and the amount of upgrade tokens you would like to burn. You can only upgrade simps that you own yourself and simps you do not own that have `upgradeAccepted` set to true.
 
+### Contract Address
+
+The contract is not yet deployed. This will happen live on stream at a future date. Please join the [Discord Server](https://discord.gg/VH2haTs) for announcements.
+
 ## How to deploy
 
 This is a [Hardhat](https://hardhat.org) project. To deploy (for example on Rinkeby) run 
