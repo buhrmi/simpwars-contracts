@@ -907,8 +907,8 @@
       ]
     },
     "/home/buhrmi/simpwars-contracts/contracts/SimpWars.sol": {
-      "lastModificationDate": 1612078819770,
-      "contentHash": "90e0a3b1da270264d92fa5d17fa6f3ee",
+      "lastModificationDate": 1612255898600,
+      "contentHash": "b45c1763d75657796226183436bd87d7",
       "sourceName": "contracts/SimpWars.sol",
       "solcConfig": {
         "version": "0.7.3",
@@ -933,8 +933,8 @@
         }
       },
       "imports": [
-        "hardhat/console.sol",
         "./openzeppelin/token/ERC721/ERC721.sol",
+        "./openzeppelin/token/ERC20/ERC20Burnable.sol",
         "./openzeppelin/access/Ownable.sol",
         "./openzeppelin/math/SafeMath.sol"
       ],
@@ -2678,6 +2678,45 @@
       ],
       "artifacts": [
         "console"
+      ]
+    },
+    "/home/buhrmi/simpwars-contracts/contracts/SimpUpgradeToken.sol": {
+      "lastModificationDate": 1612256293320,
+      "contentHash": "695adc0d60c538cf92752d788f53dfcc",
+      "sourceName": "contracts/SimpUpgradeToken.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./openzeppelin/math/SafeMath.sol",
+        "./openzeppelin/token/ERC20/ERC20.sol",
+        "./openzeppelin/GSN/Context.sol",
+        "./openzeppelin/token/ERC721/IERC721.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "SimpUpgradeToken"
       ]
     }
   }

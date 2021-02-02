@@ -5,6 +5,7 @@
 pragma solidity >=0.6.0 <0.8.0;
 
 import "./openzeppelin/token/ERC721/ERC721.sol";
+import "./openzeppelin/token/ERC20/ERC20Burnable.sol";
 import "./openzeppelin/access/Ownable.sol";
 import "./openzeppelin/math/SafeMath.sol";
 
@@ -16,43 +17,64 @@ contract ProxyRegistry {
 }
 
 contract Pricing {
-    function price(uint256 simpID, uint256 blocknumber) public pure returns (uint256) {
-        return uint256(keccak256(abi.encodePacked(simpID, blocknumber))) % 5 ether;
+    function price(uint256 streamerId, uint256 blocknumber) public pure returns (uint256) {
+        return uint256(keccak256(abi.encodePacked(streamerId, blocknumber))) % 5 ether;
     }
 
-    function price(uint256 simpID) public view returns (uint256) {
-        return price(simpID, block.number);
+    function price(uint256 streamerId) public view returns (uint256) {
+        return price(streamerId, block.number);
     }
 
-    function getPrice(uint256 simpID) public view returns (uint256) {
-        uint256 effectivePrice = price(simpID);
+    function getPrice(uint256 streamerId) public view returns (uint256) {
+        uint256 effectivePrice = price(streamerId);
         
         // If the price was lower in previous block, use the price of previous block
-        uint256 prevPrice = price(simpID, block.number - 1);
+        uint256 prevPrice = price(streamerId, block.number - 1);
         if (prevPrice < effectivePrice) effectivePrice = prevPrice;
         
         return effectivePrice;
     }
 }
 
-contract TokenizedStreamers is ERC721, Ownable {
+
+contract SimpWars is ERC721, Ownable {
     using SafeMath for uint256;
     
-    Pricing pricer = new Pricing();
+    Pricing public pricer = new Pricing();
 
+    mapping(uint => uint) upgrades;
+
+    event SimpUpgraded(uint indexed streamerId, uint256 amount);
+
+    address public sutAddress;
     address public proxyRegistryAddress = 0xF57B2c51dED3A29e6891aba85459d600256Cf317; // Rinkeby
     //address public proxyRegistryAddress = 0xa5409ec958c83c3f309868babaca7c86dcb077c1; // Mainnet
     
     string public contractURI = "https://simpwars.loca.lt"; // Rinkeby
     //string public contractURI = "https://simpwars.net"; // Mainnet
     
-    constructor() ERC721("SimpWars", "SIMPS") {
+    constructor(address _sutAddress) ERC721("SimpWars", "SIMPS") {
+      sutAddress = _sutAddress;
       _setBaseURI("https://simpwars.loca.lt/metadata/twitch/"); // Rinkeby
       //_setBaseURI("https://simpwars.net/metadata/twitch/"); // Mainnet
     }
 
-    function price(uint256 simpID) public view returns (uint256) {
-        return pricer.getPrice(simpID);
+    function getUpgrades(uint256 _streamerId) public view returns (uint256) {
+        return upgrades[_streamerId];
+    }
+
+    /**
+     * @dev Upgrade the simp and burn the SimpUpgradeTokens 
+    */
+    function upgrade(uint256 _streamerId, uint256 amount) public {
+        upgrades[_streamerId] = upgrades[_streamerId].add(amount);
+        ERC20Burnable(sutAddress).transferFrom(msg.sender, address(this), amount);
+        ERC20Burnable(sutAddress).burn(amount);
+        emit SimpUpgraded(_streamerId, amount);
+    }
+
+    function price(uint256 _streamerId) public view returns (uint256) {
+        return pricer.getPrice(_streamerId);
     }
 
     /**
@@ -75,8 +97,8 @@ contract TokenizedStreamers is ERC721, Ownable {
         contractURI = newURI;
     }
     
-    function purchase(uint256 simpID) public payable {
-        uint256 effectivePrice = price(simpID);
+    function purchase(uint256 streamerId) public payable {
+        uint256 effectivePrice = price(streamerId);
         
         // Forward payment to contract owner
         payable(owner()).transfer(effectivePrice);
@@ -85,7 +107,7 @@ contract TokenizedStreamers is ERC721, Ownable {
         msg.sender.transfer(msg.value.sub(effectivePrice));
          
         // Mint the ERC721 Token
-        _mint(msg.sender, simpID);
+        _mint(msg.sender, streamerId);
     }
     
     function isApprovedForAll(address owner, address operator) 

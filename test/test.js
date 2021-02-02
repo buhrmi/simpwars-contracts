@@ -8,7 +8,7 @@ describe("SimpWars", function() {
     const address = (await ethers.getSigners())[0].address;
 
     const SimpWars = await ethers.getContractFactory("SimpWars");
-    const simpwars = await SimpWars.deploy();
+    const simpwars = await SimpWars.deploy("0x0000000000000000000000000000000000000000");
     
     const contract = await simpwars.deployed();
 
@@ -26,7 +26,7 @@ describe("SimpWars", function() {
     const address = (await ethers.getSigners())[0].address;
 
     const SimpWars = await ethers.getContractFactory("SimpWars");
-    const simpwars = await SimpWars.deploy();
+    const simpwars = await SimpWars.deploy("0x0000000000000000000000000000000000000000");
     
     await simpwars.deployed();
     const price = await simpwars.price(2387476);
@@ -44,7 +44,7 @@ describe("SimpWars", function() {
     const address = (await ethers.getSigners())[0].address;
     
     const SimpWars = await ethers.getContractFactory("SimpWars");
-    const simpwars = await SimpWars.deploy();
+    const simpwars = await SimpWars.deploy("0x0000000000000000000000000000000000000000");
     
     await simpwars.deployed();
 
@@ -59,7 +59,7 @@ describe("SimpWars", function() {
 
   it("price should be calculated the same with javascript", async function() {
     const SimpWars = await ethers.getContractFactory("SimpWars");
-    const simpwars = await SimpWars.deploy();
+    const simpwars = await SimpWars.deploy("0x0000000000000000000000000000000000000000");
     const provider = ethers.provider
     await simpwars.deployed();
 
@@ -82,7 +82,7 @@ describe("SimpWars", function() {
     const address = (await ethers.getSigners())[0].address;
     
     const SimpWars = await ethers.getContractFactory("SimpWars");
-    const simpwars = await SimpWars.deploy();
+    const simpwars = await SimpWars.deploy("0x0000000000000000000000000000000000000000");
     await simpwars.deployed();
 
     const AltPricing = await ethers.getContractFactory("AltPricing");
