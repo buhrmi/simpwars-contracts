@@ -4,7 +4,7 @@
 
 This repo contains the smart contract that allows anyone to tokenize Twitch streamers on the Ethereum blockchain. A tokenized streamer is called a simp. Simps are needed to fight in the upcoming [Simp Wars](https://github.com/buhrmi/simpwars).
 
-There is an initial minting fee of 1 ETH. This fee doubles every time a new simp is minted. The fee gradually decreases by 50% every 24 hours. 
+Anyone can mint new simps and become their owner, but there is an initial minting fee of 1 ETH. This fee doubles every time a new simp is minted. The fee gradually decreases by 50% every 24 hours. 
 
 Only **one** simp can be minted per streamer. No simps are pre-minted. To mint a simp, call the `mint` function with the Twitch User ID and pay the required amount of Eth. If you submit too much Eth, the contract will send the remaining Eth back to you. You can check the `price` function to see the current minting fee.
 
