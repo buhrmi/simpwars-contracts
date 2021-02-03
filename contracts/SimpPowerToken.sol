@@ -9,10 +9,10 @@ import "./ISimps.sol";
 
 /**
  *
- * SimpUpgradeToken Contract (The native token of SimpWars)
+ * SimpPowerToken Contract (The native token of SimpWars)
  * @dev Extends standard ERC20 contract
  */
-contract SimpUpgradeToken is ERC20 {
+contract SimpPowerToken is ERC20 {
     using SafeMath for uint256;
 
     // Constants
@@ -25,10 +25,10 @@ contract SimpUpgradeToken is ERC20 {
 
     address private _simpsAddress;
 
-    constructor() ERC20("Simp Upgrade Token", "SUT") {}
+    constructor() ERC20("Simp Power Token", "SPT") {}
 
     /**
-     * @dev When accumulated SUTs have last been claimed for a Simp index
+     * @dev When accumulated SPTs have last been claimed for a Simp index
      */
     function lastClaim(uint256 tokenIndex) public view returns (uint256) {
         require(ISimps(_simpsAddress).ownerOf(tokenIndex) != address(0), "Owner cannot be 0 address");
@@ -38,16 +38,13 @@ contract SimpUpgradeToken is ERC20 {
     }
     
     /**
-     * @dev Accumulated SUT tokens for a Simp token index.
+     * @dev Accumulated SPT tokens for a Simp token index.
      */
     function accumulated(uint256 tokenIndex) public view returns (uint256) {
 
         require(ISimps(_simpsAddress).ownerOf(tokenIndex) != address(0), "Owner cannot be 0 address");
-
         uint256 lastClaimed = lastClaim(tokenIndex);
-
         uint256 totalAccumulated = block.timestamp.sub(lastClaimed).mul(emissionPerDay).div(SECONDS_IN_A_DAY);
-
         return totalAccumulated;
     }
 
@@ -56,12 +53,11 @@ contract SimpUpgradeToken is ERC20 {
      */
     function setSimpsAddress(address simpsAddress) public {
         require(_simpsAddress == address(0), "Already set");
-        
         _simpsAddress = simpsAddress;
     }
     
     /**
-     * @dev Claim mints SUTs and supports multiple Simp token indices at once.
+     * @dev Claim mints SPTs and supports multiple Simp token indices at once.
      */
     function claim(uint256[] memory tokenIndices) public returns (uint256) {
 
@@ -82,7 +78,7 @@ contract SimpUpgradeToken is ERC20 {
             }
         }
 
-        require(totalClaimAmount != 0, "No accumulated SUT");
+        require(totalClaimAmount != 0, "No accumulated SPT");
         _mint(msg.sender, totalClaimAmount); 
         return totalClaimAmount;
     }

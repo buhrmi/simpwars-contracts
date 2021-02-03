@@ -26,9 +26,9 @@ contract SimpWars is ERC721, Ownable {
     uint256 public lastPurchase = block.timestamp;
 
 
-    mapping(uint => uint) public upgrades;
+    mapping(uint => uint) public powerups;
     mapping(uint => uint) public timestamps;
-    mapping(uint => bool) public upgradesAccepted;
+    mapping(uint => bool) public powerupsAccepted;
 
     event SimpUpgraded(uint indexed streamerId, uint256 amount);
 
@@ -60,11 +60,11 @@ contract SimpWars is ERC721, Ownable {
 
 
     function getUpgrades(uint256 _streamerId) public view returns (uint256) {
-        return upgrades[_streamerId];
+        return powerups[_streamerId];
     }
 
-    function upgradeAccepted(uint256 _streamerId) public view returns (bool) {
-        return upgradesAccepted[_streamerId];
+    function powerupAccepted(uint256 _streamerId) public view returns (bool) {
+        return powerupsAccepted[_streamerId];
     }
 
     function mintedTimestamp(uint256 _streamerId) public view returns (uint256) {
@@ -73,15 +73,15 @@ contract SimpWars is ERC721, Ownable {
 
     function setUpgradeAccepted(uint256 _streamerId, bool allowed) public {
         require(ownerOf(_streamerId) == msg.sender);
-        upgradesAccepted[_streamerId] = allowed;
+        powerupsAccepted[_streamerId] = allowed;
     }
 
     /**
      * @dev Upgrade the simp and burn the SimpUpgradeTokens 
     */
-    function upgrade(uint256 _streamerId, uint256 amount) public {
-        require(ownerOf(_streamerId) == msg.sender || upgradesAccepted[_streamerId], "you don't have permission to upgrade this simp");
-        upgrades[_streamerId] = upgrades[_streamerId].add(amount);
+    function powerup(uint256 _streamerId, uint256 amount) public {
+        require(ownerOf(_streamerId) == msg.sender || powerupsAccepted[_streamerId], "you don't have permission to powerup this simp");
+        powerups[_streamerId] = powerups[_streamerId].add(amount);
         ERC20Burnable(sutAddress).transferFrom(msg.sender, address(this), amount);
         ERC20Burnable(sutAddress).burn(amount);
         emit SimpUpgraded(_streamerId, amount);

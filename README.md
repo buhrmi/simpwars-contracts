@@ -8,11 +8,11 @@ The initial minting cost is 1 ETH and doubles every time a new simp is minted. T
 
 No simps are pre-minted and can be minted by whoever wants them. You can use the `price` function to check the current cost to mint a simp. To actually mint a simp, call the `mint` function with the Twitch User ID and pay the required amount of Eth. If you submit too much Eth, the contract will send the remaining Eth back to you.
 
-## Simp Upgrade Tokens
+## Simp Power Tokens
 
-Every 24 hours all simps you hold emit 10 Simp Upgrade Tokens (SUT). You can burn these tokens to upgrade your simps and make them more powerful.
+Every 24 hours all simps you hold emit 10 Simp Power Tokens (SPT). You can burn these tokens to powerup your simps and make them more powerful.
 
-To upgrade a simp, call the `upgrade` function with the simp ID and the amount of upgrade tokens you would like to burn. You can only upgrade simps that you own yourself and simps you do not own that have `upgradeAccepted` set to true.
+To powerup a simp, call the `powerup` function with the simp ID and the amount of powerup tokens you would like to burn. You can only powerup simps that you own yourself and simps you do not own that have `powerupAccepted` set to true.
 
 ### Contract Address
 
