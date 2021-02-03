@@ -12,7 +12,7 @@ No simps are pre-minted and can be minted by whoever wants them. You can use the
 
 Every 24 hours, your simps emit 10 Power Tokens (PT). These Power Tokens can be burned to increase your simps' on-chain powerlevel. A higher powerlevel gives your simp more power to survive in combat during the great SimpWars.
 
-To increase the powerlevel, call the `powerup` function with the simp ID and the amount of Powerup Tokens you would like to burn. You can not only powerup simps that you own yourself, but also your friend's simps that have `powerupAccepted` set to true.
+To increase the powerlevel, call the `powerup` function with the simp ID and the amount of Powerup Tokens you would like to burn. You can powerup simps that you own yourself, and also your friend's simps that have `powerupAccepted` set to true.
 
 ### Contract Address
 
