@@ -107,7 +107,7 @@ contract SimpWars is ERC721, Ownable {
         contractURI = newURI;
     }
     
-    function purchase(uint256 streamerId) public payable {
+    function mint(uint256 streamerId) public payable {
         uint256 effectivePrice = price();
         
         // Forward payment to contract owner
@@ -119,7 +119,7 @@ contract SimpWars is ERC721, Ownable {
         // Save timestamp of mint
         timestamps[streamerId] = block.timestamp;
 
-        // Save the next purchase price
+        // Save the next mint price
         nextPrice = effectivePrice * 2;
 
         // Mint the ERC721 Token

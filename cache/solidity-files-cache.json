@@ -907,8 +907,8 @@
       ]
     },
     "/home/buhrmi/simpwars-contracts/contracts/SimpWars.sol": {
-      "lastModificationDate": 1612318455770,
-      "contentHash": "f1e05e4283a408b71283fb8e6aa3ba87",
+      "lastModificationDate": 1612319287240,
+      "contentHash": "8263985697f79e8bd58600c6baf3c43a",
       "sourceName": "contracts/SimpWars.sol",
       "solcConfig": {
         "version": "0.7.3",

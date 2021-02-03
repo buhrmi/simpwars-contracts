@@ -14,7 +14,7 @@ describe("SimpWars", function() {
     const contract = await simpwars.deployed();
 
     
-    await contract.purchase(2387476, {value: Web3.utils.toWei('5', 'ether')})
+    await contract.mint(2387476, {value: Web3.utils.toWei('5', 'ether')})
   
     const owner = await contract.ownerOf(2387476);
 
@@ -23,7 +23,7 @@ describe("SimpWars", function() {
 
   });
 
-  it("should not be possible to purchase simps at a too low price", async function() {
+  it("should not be possible to mint simps at a too low price", async function() {
     const address = (await ethers.getSigners())[0].address;
 
     const SimpWars = await ethers.getContractFactory("SimpWars");
@@ -32,7 +32,7 @@ describe("SimpWars", function() {
     await simpwars.deployed();
     const price = await simpwars.price();
   
-    await simpwars.purchase(2387476, {value: 0})
+    await simpwars.mint(2387476, {value: 0})
       .then(function(m) {
         throw new Error('was not supposed to succeed');
       })
@@ -51,7 +51,7 @@ describe("SimpWars", function() {
 
     const price = await simpwars.price();
     const priceAsHex = price.toHexString();
-    await simpwars.purchase(2387476, {value: priceAsHex})
+    await simpwars.mint(2387476, {value: priceAsHex})
 
     const url = await simpwars.tokenURI(2387476);
 
@@ -65,10 +65,10 @@ describe("SimpWars", function() {
     const simpwars = await SimpWars.deploy("0x0000000000000000000000000000000000000000");
     await simpwars.deployed();
     
-    // Check initial price and make a purchase
+    // Check initial price and make a mint
     const initialPrice = await simpwars.price();
     expect(initialPrice).to.equal(Web3.utils.toWei('1', 'ether'));
-    await simpwars.purchase(2387476, {value: initialPrice})
+    await simpwars.mint(2387476, {value: initialPrice})
     const owner = await simpwars.ownerOf(2387476);
     expect(owner).to.equal(address);
 
