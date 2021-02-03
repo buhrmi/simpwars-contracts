@@ -149,8 +149,6 @@ describe("SimpWars", function() {
       .catch(function(m) {
         expect(m.message).to.equal('VM Exception while processing transaction: revert ERC20: transfer amount exceeds balance')
       })
-
-    await powerToken.transfer(account2.address, useBalance);
     
   });
 
