@@ -3,16 +3,16 @@
 pragma solidity >=0.6.0 <0.8.0;
 
 import "./openzeppelin/math/SafeMath.sol";
-import "./openzeppelin/token/ERC20/ERC20.sol";
+import "./openzeppelin/token/ERC20/ERC20Burnable.sol";
 import "./openzeppelin/GSN/Context.sol";
-import "./ISimps.sol";
+import "./ISimpWars.sol";
 
 /**
  *
  * SimpPowerToken Contract (The native token of SimpWars)
  * @dev Extends standard ERC20 contract
  */
-contract SimpPowerToken is ERC20 {
+contract PowerToken is ERC20Burnable {
     using SafeMath for uint256;
 
     // Constants
@@ -25,25 +25,37 @@ contract SimpPowerToken is ERC20 {
 
     address private _simpsAddress;
 
-    constructor() ERC20("Simp Power Token", "SPT") {}
+    constructor() ERC20("Power Token", "PT") {}
 
     /**
      * @dev When accumulated SPTs have last been claimed for a Simp index
      */
-    function lastClaim(uint256 tokenIndex) public view returns (uint256) {
-        require(ISimps(_simpsAddress).ownerOf(tokenIndex) != address(0), "Owner cannot be 0 address");
-        uint256 emissionStart = ISimps(_simpsAddress).mintedTimestamp(tokenIndex);
-        uint256 lastClaimed = uint256(_lastClaim[tokenIndex]) != 0 ? uint256(_lastClaim[tokenIndex]) : emissionStart;
+    function lastClaim(uint256 simpId) public view returns (uint256) {
+        require(ISimpWars(_simpsAddress).ownerOf(simpId) != address(0), "Owner cannot be 0 address");
+        uint256 emissionStart = ISimpWars(_simpsAddress).mintedTimestamp(simpId);
+        uint256 lastClaimed = uint256(_lastClaim[simpId]) != 0 ? uint256(_lastClaim[simpId]) : emissionStart;
         return lastClaimed;
+    }
+
+    /**
+     * @dev Claim all SPT from all owned simps
+     */
+    function claimAll() public {
+        uint256 balance = ISimpWars(_simpsAddress).balanceOf(msg.sender);
+        uint256[] memory simpIds = new uint[](balance);
+        for (uint256 i = 0; i < balance; i++) {
+            simpIds[i] = (ISimpWars(_simpsAddress).tokenOfOwnerByIndex(msg.sender, i));
+        }
+        claim(simpIds);
     }
     
     /**
      * @dev Accumulated SPT tokens for a Simp token index.
      */
-    function accumulated(uint256 tokenIndex) public view returns (uint256) {
+    function accumulated(uint256 simpId) public view returns (uint256) {
 
-        require(ISimps(_simpsAddress).ownerOf(tokenIndex) != address(0), "Owner cannot be 0 address");
-        uint256 lastClaimed = lastClaim(tokenIndex);
+        require(ISimpWars(_simpsAddress).ownerOf(simpId) != address(0), "Owner cannot be 0 address");
+        uint256 lastClaimed = lastClaim(simpId);
         uint256 totalAccumulated = block.timestamp.sub(lastClaimed).mul(emissionPerDay).div(SECONDS_IN_A_DAY);
         return totalAccumulated;
     }
@@ -68,19 +80,28 @@ contract SimpPowerToken is ERC20 {
                 require(tokenIndices[i] != tokenIndices[j], "Duplicate token index");
             }
 
-            uint tokenIndex = tokenIndices[i];
-            require(ISimps(_simpsAddress).ownerOf(tokenIndex) == msg.sender, "Sender is not the owner");
+            uint simpId = tokenIndices[i];
+            require(ISimpWars(_simpsAddress).ownerOf(simpId) == msg.sender, "Sender is not the owner");
 
-            uint256 claimAmount = accumulated(tokenIndex);
+            uint256 claimAmount = accumulated(simpId);
             if (claimAmount != 0) {
                 totalClaimAmount = totalClaimAmount.add(claimAmount);
-                _lastClaim[tokenIndex] = block.timestamp;
+                _lastClaim[simpId] = block.timestamp;
             }
         }
 
         require(totalClaimAmount != 0, "No accumulated SPT");
         _mint(msg.sender, totalClaimAmount); 
         return totalClaimAmount;
+    }
+
+    function transferFrom(address sender, address recipient, uint256 amount) public virtual override returns (bool) {
+        // Approval check is skipped if the caller of transferFrom is the Hashmasks contract. For better UX.
+        if (msg.sender == _simpsAddress) {
+          _transfer(sender, recipient, amount);
+          return true;
+        }
+        return super.transferFrom(sender, recipient, amount);
     }
 
 }

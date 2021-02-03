@@ -1,8 +1,6 @@
 const { expect } = require("chai");
 const Web3 = require("web3")
 var abi = require('ethereumjs-abi');
-// const { ethers } = require("ethers");
-// const { ethers } = require("ethers");
 
 describe("SimpWars", function() {
   it("should send excess ether back", async function() {
@@ -78,22 +76,82 @@ describe("SimpWars", function() {
     expect(nextPrice).to.be.above(Web3.utils.toWei('1.999', 'ether'));
    
     // Check for price to be less than 2 eth after a few blocks
-    await simpwars.setUpgradeAccepted(2387476, {value: initialPrice}); // make a tx to advance time
+    await simpwars.setPowerupAccepted(2387476, true); // make a tx to advance time
     let finalPrice = await simpwars.price();
-    console.log(finalPrice.toString());
     expect(finalPrice).to.be.below(nextPrice);
 
   });
 
-  // it("emits 10 upgrade tokens per day that can be claimed", async function() {
-  //   throw new Error("not implemented")
-  // });
+  it("emits 10 power tokens per day that can be claimed", async function() {
+    const address = (await ethers.getSigners())[0].address;
 
-  // it("allows upgrades from owner", async function() {
-  //   throw new Error("not implemented")
-  // });
+      const PowerToken = await ethers.getContractFactory("PowerToken");
+      const powerToken = await PowerToken.deploy();
+      const powerTokenContract = await powerToken.deployed();
 
-  // it("allows upgrades from anyone", async function() {
-  //   throw new Error("not implemented")
-  // });
+      const SimpWars = await ethers.getContractFactory("SimpWars");
+      const simpWars = await SimpWars.deploy(powerTokenContract.address);
+      const simpWarsContract = await simpWars.deployed();
+
+      await powerTokenContract.setSimpsAddress(simpWarsContract.address);
+
+      await simpWarsContract.mint(2387476, {value: Web3.utils.toWei('5', 'ether')})
+   
+      await simpWars.setPowerupAccepted(2387476, true); // make a tx to advance time by 1s
+      
+      const timestamp1 = (await simpWars.mintedTimestamp(2387476))      
+      let timestamp2 = (await ethers.provider.getBlock()).timestamp
+      let elapsed = timestamp2 - timestamp1
+      let claimable = await powerToken.accumulated(2387476);
+      const claimedPerSecond = 115740740740740.74
+ 
+      expect(claimable).to.equal(Math.floor(claimedPerSecond * elapsed));
+
+      await powerToken.claimAll();
+      claimable = await powerToken.accumulated(2387476);
+      expect(claimable).to.equal(0);
+      
+      timestamp2 = (await ethers.provider.getBlock()).timestamp
+      elapsed = timestamp2 - timestamp1
+      const balance = await powerToken.balanceOf(address)
+      
+      expect(balance).to.equal(Math.floor(claimedPerSecond * elapsed));
+
+  });
+
+  it("accepts Power Tokens for powerups", async function() {
+    const [owner, account2] = (await ethers.getSigners())
+    const PowerToken = await ethers.getContractFactory("PowerToken");
+    const powerToken = await PowerToken.deploy();
+    const powerTokenContract = await powerToken.deployed();
+    const SimpWars = await ethers.getContractFactory("SimpWars");
+    const simpWars = await SimpWars.deploy(powerTokenContract.address);
+    const simpWarsContract = await simpWars.deployed();
+    await powerTokenContract.setSimpsAddress(simpWarsContract.address);
+    await simpWarsContract.mint(2387476, {value: Web3.utils.toWei('5', 'ether')})
+    await simpWars.setPowerupAccepted(2387476, true); // make a tx to advance time by 1s
+    await powerToken.claimAll();
+
+    const useBalance = 10000
+    const balance = await powerToken.balanceOf(owner.address)
+    await simpWars.powerup(2387476, useBalance)
+
+    const remainingBalance = await powerToken.balanceOf(owner.address);
+    expect(remainingBalance).to.equal(balance - useBalance);
+
+    const powerup = await simpWars.getPowerlevel(2387476)
+    expect(powerup).to.equal(useBalance);
+
+    await simpWars.powerup(2387476, balance)
+      .then(function(m) {
+        throw new Error('was not supposed to succeed');
+      })
+      .catch(function(m) {
+        expect(m.message).to.equal('VM Exception while processing transaction: revert ERC20: transfer amount exceeds balance')
+      })
+
+    await powerToken.transfer(account2.address, useBalance);
+    
+  });
+
 });

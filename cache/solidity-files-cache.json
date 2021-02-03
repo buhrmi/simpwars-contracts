@@ -907,8 +907,8 @@
       ]
     },
     "/home/buhrmi/simpwars-contracts/contracts/SimpWars.sol": {
-      "lastModificationDate": 1612319287240,
-      "contentHash": "8263985697f79e8bd58600c6baf3c43a",
+      "lastModificationDate": 1612330158770,
+      "contentHash": "ec010427449216f851b0ba9e9be39e3f",
       "sourceName": "contracts/SimpWars.sol",
       "solcConfig": {
         "version": "0.7.3",
@@ -2645,49 +2645,10 @@
         "console"
       ]
     },
-    "/home/buhrmi/simpwars-contracts/contracts/SimpUpgradeToken.sol": {
-      "lastModificationDate": 1612259387130,
-      "contentHash": "66367d7c59d8ef875ba6c508bc2b934b",
-      "sourceName": "contracts/SimpUpgradeToken.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "./openzeppelin/math/SafeMath.sol",
-        "./openzeppelin/token/ERC20/ERC20.sol",
-        "./openzeppelin/GSN/Context.sol",
-        "./ISimps.sol"
-      ],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "SimpUpgradeToken"
-      ]
-    },
-    "/home/buhrmi/simpwars-contracts/contracts/ISimps.sol": {
-      "lastModificationDate": 1612259381130,
-      "contentHash": "6161058fcb4ca8f939055204744643e5",
-      "sourceName": "contracts/ISimps.sol",
+    "/home/buhrmi/simpwars-contracts/contracts/ISimpWars.sol": {
+      "lastModificationDate": 1612330035710,
+      "contentHash": "ae0876c7da077f97c68e4a9dae699668",
+      "sourceName": "contracts/ISimpWars.sol",
       "solcConfig": {
         "version": "0.7.3",
         "settings": {
@@ -2717,7 +2678,46 @@
         ">=0.6.0 <0.8.0"
       ],
       "artifacts": [
-        "ISimps"
+        "ISimpWars"
+      ]
+    },
+    "/home/buhrmi/simpwars-contracts/contracts/PowerToken.sol": {
+      "lastModificationDate": 1612330105520,
+      "contentHash": "bdf5b076d0591e58753ff4933035c080",
+      "sourceName": "contracts/PowerToken.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./openzeppelin/math/SafeMath.sol",
+        "./openzeppelin/token/ERC20/ERC20Burnable.sol",
+        "./openzeppelin/GSN/Context.sol",
+        "./ISimpWars.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "PowerToken"
       ]
     }
   }

@@ -1,7 +1,5 @@
 // SPDX-License-Identifier: WTFPL
 
-// Tokenized Streamers
-
 pragma solidity >=0.6.0 <0.8.0;
 
 import "./openzeppelin/token/ERC721/ERC721.sol";
@@ -26,28 +24,28 @@ contract SimpWars is ERC721, Ownable {
     uint256 public lastPurchase = block.timestamp;
 
 
-    mapping(uint => uint) public powerups;
+    mapping(uint => uint) public powerlevels;
     mapping(uint => uint) public timestamps;
     mapping(uint => bool) public powerupsAccepted;
 
-    event SimpUpgraded(uint indexed streamerId, uint256 amount);
+    event SimpPowerup(uint indexed streamerId, uint256 amount);
 
-    address public sutAddress;
+    address public tokenAddress;
     address public proxyRegistryAddress = 0xF57B2c51dED3A29e6891aba85459d600256Cf317; // Rinkeby
     //address public proxyRegistryAddress = 0xa5409ec958c83c3f309868babaca7c86dcb077c1; // Mainnet
     
     string public contractURI = "https://simpwars.loca.lt"; // Rinkeby
     //string public contractURI = "https://simpwars.net"; // Mainnet
     
-    constructor(address _sutAddress) ERC721("SimpWars", "SIMPS") {
-      sutAddress = _sutAddress;
+    constructor(address _tokenAddress) ERC721("SimpWars", "SIMPS") {
+      tokenAddress = _tokenAddress;
       _setBaseURI("https://simpwars.loca.lt/metadata/twitch/"); // Rinkeby
       //_setBaseURI("https://simpwars.net/metadata/twitch/"); // Mainnet
     }
 
     function price() public view returns (uint256) {
         
-        uint256 elapsedSeconds = block.timestamp - lastPurchase;
+        uint256 elapsedSeconds = block.timestamp.sub(lastPurchase);
         if (elapsedSeconds == 0) return nextPrice;
 
         // Apply logarithmic falloff. The FALLOFF_BASE is selected in a way so that
@@ -58,33 +56,32 @@ contract SimpWars is ERC721, Ownable {
         return effectivePrice;
     }
 
-
-    function getUpgrades(uint256 _streamerId) public view returns (uint256) {
-        return powerups[_streamerId];
+    function getPowerlevel(uint256 simpId) public view returns (uint256) {
+        return powerlevels[simpId];
     }
 
-    function powerupAccepted(uint256 _streamerId) public view returns (bool) {
-        return powerupsAccepted[_streamerId];
+    function powerupAccepted(uint256 simpId) public view returns (bool) {
+        return powerupsAccepted[simpId];
     }
 
-    function mintedTimestamp(uint256 _streamerId) public view returns (uint256) {
-        return timestamps[_streamerId];
+    function mintedTimestamp(uint256 simpId) public view returns (uint256) {
+        return timestamps[simpId];
     }
 
-    function setUpgradeAccepted(uint256 _streamerId, bool allowed) public {
-        require(ownerOf(_streamerId) == msg.sender);
-        powerupsAccepted[_streamerId] = allowed;
+    function setPowerupAccepted(uint256 simpId, bool allowed) public {
+        require(ownerOf(simpId) == msg.sender);
+        powerupsAccepted[simpId] = allowed;
     }
 
     /**
-     * @dev Upgrade the simp and burn the SimpUpgradeTokens 
+     * @dev Powerup the simp and burn the Simp Powerup Tokens 
     */
-    function powerup(uint256 _streamerId, uint256 amount) public {
-        require(ownerOf(_streamerId) == msg.sender || powerupsAccepted[_streamerId], "you don't have permission to powerup this simp");
-        powerups[_streamerId] = powerups[_streamerId].add(amount);
-        ERC20Burnable(sutAddress).transferFrom(msg.sender, address(this), amount);
-        ERC20Burnable(sutAddress).burn(amount);
-        emit SimpUpgraded(_streamerId, amount);
+    function powerup(uint256 simpId, uint256 amount) public {
+        require(ownerOf(simpId) == msg.sender || powerupsAccepted[simpId], "you don't have permission to powerup this simp");
+        powerlevels[simpId] = powerlevels[simpId].add(amount);
+        ERC20Burnable(tokenAddress).transferFrom(msg.sender, address(this), amount);
+        ERC20Burnable(tokenAddress).burn(amount);
+        emit SimpPowerup(simpId, amount);
     }
 
     /**
