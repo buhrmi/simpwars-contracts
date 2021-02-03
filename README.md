@@ -1,4 +1,4 @@
-# Simp Wars
+# Tokenized Streamers
 
 > When simps go to the moon 🚀
 
