@@ -1,10 +1,12 @@
 # Tokenized Streamers
 
-Welcome to Tokenized Streamers. This smart contract allows anyone to tokenize Twitch streamers on the Ethereum blockchain. A tokenized streamer is called a simp. Simps are needed to participate in the great upcoming [SimpWars](https://github.com/buhrmi/simpwars).
+Hello and welcome. This smart contract allows anyone to mint a simp on the Ethereum blockchain. A simp is a tokenized Twitch streamer. Simps are needed to participate in the great upcoming [SimpWars](https://github.com/buhrmi/simpwars).
 
-At the time of deployment, all streamers are unassigned and freely purchasable by whoever wants them. The price randomly fluctuates between 0 and 5 Eth and changes each block. You can use the `price` function to check the current price of a streamer. You have a three block window (around 30 seconds) to purchase a streamer after the price changes. To purchase a streamer, call the `purchase` function with the Twitch User ID and pay the required amount of Eth. Make sure to set a generous gas price to ensure that your transaction gets mined within the three block window. If you submit too much Eth, the contract will send the remaining Eth back to you.
+No simps are pre-minted and can be minted by whoever wants them. You can use the `price` function to check the current price to mint a simp. To actually mint a simp, call the `purchase` function with the Twitch User ID and pay the required amount of Eth. If you submit too much Eth, the contract will send the remaining Eth back to you.
 
-### Simp Upgrade Tokens
+The initial price to mint a simp is 1 ETH and doubles every time a new simp is minted. To prevent the price from skyrocketing the price is decreased logarithmically by 50% every 24 hours.
+
+## Simp Upgrade Tokens
 
 Every 24 hours all simps you hold emit 10 Simp Upgrade Tokens (SUT). You can burn these tokens to upgrade your simps and make them more powerful.
 

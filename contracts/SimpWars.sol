@@ -16,31 +16,15 @@ contract ProxyRegistry {
     mapping(address => OwnableDelegateProxy) public proxies;
 }
 
-contract Pricing {
-    function price(uint256 streamerId, uint256 blocknumber) public pure returns (uint256) {
-        return uint256(keccak256(abi.encodePacked(streamerId, blocknumber))) % 5 ether;
-    }
-
-    function price(uint256 streamerId) public view returns (uint256) {
-        return price(streamerId, block.number);
-    }
-
-    function getPrice(uint256 streamerId) public view returns (uint256) {
-        uint256 effectivePrice = price(streamerId);
-        
-        // If the price was lower in previous block, use the price of previous block
-        uint256 prevPrice = price(streamerId, block.number - 1);
-        if (prevPrice < effectivePrice) effectivePrice = prevPrice;
-        
-        return effectivePrice;
-    }
-}
-
-
 contract SimpWars is ERC721, Ownable {
     using SafeMath for uint256;
-    
-    Pricing public pricer = new Pricing();
+
+    uint256 public SECONDS_IN_A_DAY = 864000;
+    uint256 constant FALLOFF_BASE = 0xFFFF79679FF758000000000000000000; // = 0.9999919775 * 2^128
+
+    uint256 public nextPrice = 1 ether;
+    uint256 public lastPurchase = block.timestamp;
+
 
     mapping(uint => uint) public upgrades;
     mapping(uint => uint) public timestamps;
@@ -60,6 +44,20 @@ contract SimpWars is ERC721, Ownable {
       _setBaseURI("https://simpwars.loca.lt/metadata/twitch/"); // Rinkeby
       //_setBaseURI("https://simpwars.net/metadata/twitch/"); // Mainnet
     }
+
+    function price() public view returns (uint256) {
+        
+        uint256 elapsedSeconds = block.timestamp - lastPurchase;
+        if (elapsedSeconds == 0) return nextPrice;
+
+        // Apply logarithmic falloff. The FALLOFF_BASE is selected in a way so that
+        // after 86400 seconds (24h) factor is 0.5
+        uint256 factor = pow(FALLOFF_BASE, elapsedSeconds);
+        uint256 effectivePrice = mul(nextPrice, factor);
+
+        return effectivePrice;
+    }
+
 
     function getUpgrades(uint256 _streamerId) public view returns (uint256) {
         return upgrades[_streamerId];
@@ -89,10 +87,6 @@ contract SimpWars is ERC721, Ownable {
         emit SimpUpgraded(_streamerId, amount);
     }
 
-    function price(uint256 _streamerId) public view returns (uint256) {
-        return pricer.getPrice(_streamerId);
-    }
-
     /**
      * @dev Withdraw ether from this contract (Callable by owner)
     */
@@ -101,8 +95,8 @@ contract SimpWars is ERC721, Ownable {
         msg.sender.transfer(balance);
     }
 
-    function setPricer(Pricing newPricer) public onlyOwner {
-        pricer = newPricer;
+    fallback() external payable {
+        revert();
     }
 
     function setBaseURI(string memory newURI) public onlyOwner {
@@ -114,7 +108,7 @@ contract SimpWars is ERC721, Ownable {
     }
     
     function purchase(uint256 streamerId) public payable {
-        uint256 effectivePrice = price(streamerId);
+        uint256 effectivePrice = price();
         
         // Forward payment to contract owner
         payable(owner()).transfer(effectivePrice);
@@ -124,6 +118,9 @@ contract SimpWars is ERC721, Ownable {
         
         // Save timestamp of mint
         timestamps[streamerId] = block.timestamp;
+
+        // Save the next purchase price
+        nextPrice = effectivePrice * 2;
 
         // Mint the ERC721 Token
         _mint(msg.sender, streamerId);
@@ -140,5 +137,46 @@ contract SimpWars is ERC721, Ownable {
         return super.isApprovedForAll(owner, operator);
     }
 
+
+    // Math tools
+    uint256 constant TWO_128 = 0x100000000000000000000000000000000; // 2^128
+    uint256 constant TWO_127 = 0x80000000000000000000000000000000; // 2^127
     
+    /**
+    * Multiply _a by _b / 2^128.  Parameter _a should be less than or equal to
+    * 2^128 and parameter _b should be less than 2^128.
+    *
+    * @param _a left argument
+    * @param _b right argument
+    * @return _result = _a * _b / 2^128
+    */
+    function mul(uint256 _a, uint256 _b) internal pure returns (uint256 _result) {
+        assert(_a <= TWO_128);
+        assert(_b < TWO_128);
+        return (_a * _b + TWO_127) >> 128;
+    }
+
+    /**
+    * Calculate (_a / 2^128)^_b * 2^128.  Parameter _a should be less than 2^128.
+    *
+    * @param _a left argument
+    * @param _b right argument
+    * @return _result = (_a / 2^128)^_b * 2^128
+    */
+    function pow(uint256 _a, uint256 _b) internal pure returns (uint256 _result) {
+        assert(_a < TWO_128);
+
+        _result = TWO_128;
+        while (_b > 0) {
+            if (_b & 1 == 0) {
+                _a = mul (_a, _a);
+                _b >>= 1;
+            }
+            else {
+                _result = mul (_result, _a);
+                _b -= 1;
+            }
+        }
+    }
+        
 }

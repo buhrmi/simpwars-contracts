@@ -2,6 +2,7 @@ const { expect } = require("chai");
 const Web3 = require("web3")
 var abi = require('ethereumjs-abi');
 // const { ethers } = require("ethers");
+// const { ethers } = require("ethers");
 
 describe("SimpWars", function() {
   it("should send excess ether back", async function() {
@@ -29,7 +30,7 @@ describe("SimpWars", function() {
     const simpwars = await SimpWars.deploy("0x0000000000000000000000000000000000000000");
     
     await simpwars.deployed();
-    const price = await simpwars.price(2387476);
+    const price = await simpwars.price();
   
     await simpwars.purchase(2387476, {value: 0})
       .then(function(m) {
@@ -48,7 +49,7 @@ describe("SimpWars", function() {
     
     await simpwars.deployed();
 
-    const price = await simpwars.price(2387476);
+    const price = await simpwars.price();
     const priceAsHex = price.toHexString();
     await simpwars.purchase(2387476, {value: priceAsHex})
 
@@ -57,65 +58,42 @@ describe("SimpWars", function() {
     expect(url).to.equal('https://simpwars.loca.lt/metadata/twitch/2387476')
   });
 
-  it("price should be calculated the same with javascript", async function() {
-    const SimpWars = await ethers.getContractFactory("SimpWars");
-    const simpwars = await SimpWars.deploy("0x0000000000000000000000000000000000000000");
-    const provider = ethers.provider
-    await simpwars.deployed();
-
-    const streamerID =2387476
-    const price = await simpwars.price(streamerID);
-  
-    const maxPrice = new Web3.utils.BN(Web3.utils.toWei('5', 'ether'))
-    
-    const blockNumber = await provider.getBlockNumber()
-
-    let shouldPrice = Web3.utils.toBN(abi.soliditySHA3(["int", "int"],[streamerID, blockNumber]).toString('hex')).mod(maxPrice)
-    let prevPrice = Web3.utils.toBN(abi.soliditySHA3(["int", "int"],[streamerID, blockNumber-1]).toString('hex')).mod(maxPrice)
-    
-    if (shouldPrice.cmp(prevPrice) == 1) shouldPrice = prevPrice;
-
-    expect(price.toHexString()).to.equal('0x' + shouldPrice.toString(16).padStart(16,'0'))
-  })
-
-  it("pricing function can be swapped", async function() {
+  it("price increases and falls off", async function() {
     const address = (await ethers.getSigners())[0].address;
     
     const SimpWars = await ethers.getContractFactory("SimpWars");
     const simpwars = await SimpWars.deploy("0x0000000000000000000000000000000000000000");
     await simpwars.deployed();
-
-    const AltPricing = await ethers.getContractFactory("AltPricing");
-    const altPricer = await AltPricing.deploy();
-    await altPricer.deployed();
     
-    await simpwars.setPricer(altPricer.address);
-
-    await simpwars.purchase(2387476, {value: 12344})
-    .then(function(m) {
-      throw new Error('was not supposed to succeed');
-    })
-    .catch(function(m) {
-      expect(m.message).to.equal('Transaction reverted: function call failed to execute')
-    })
-
-    await simpwars.purchase(2387476, {value: 12345});
-
+    // Check initial price and make a purchase
+    const initialPrice = await simpwars.price();
+    expect(initialPrice).to.equal(Web3.utils.toWei('1', 'ether'));
+    await simpwars.purchase(2387476, {value: initialPrice})
     const owner = await simpwars.ownerOf(2387476);
-
     expect(owner).to.equal(address);
+
+    // Check next price to have increased by 1 eth
+    const nextPrice = await simpwars.price();
+    expect(nextPrice).to.be.below(Web3.utils.toWei('2', 'ether'));
+    expect(nextPrice).to.be.above(Web3.utils.toWei('1.999', 'ether'));
+   
+    // Check for price to be less than 2 eth after a few blocks
+    await simpwars.setUpgradeAccepted(2387476, {value: initialPrice}); // make a tx to advance time
+    let finalPrice = await simpwars.price();
+    console.log(finalPrice.toString());
+    expect(finalPrice).to.be.below(nextPrice);
+
   });
 
+  // it("emits 10 upgrade tokens per day that can be claimed", async function() {
+  //   throw new Error("not implemented")
+  // });
 
-  it("emits 10 upgrade tokens per day that can be claimed", async function() {
-    throw new Error("not implemented")
-  });
+  // it("allows upgrades from owner", async function() {
+  //   throw new Error("not implemented")
+  // });
 
-  it("allows upgrades from owner", async function() {
-    throw new Error("not implemented")
-  });
-
-  it("allows upgrades from anyone", async function() {
-    throw new Error("not implemented")
-  });
+  // it("allows upgrades from anyone", async function() {
+  //   throw new Error("not implemented")
+  // });
 });

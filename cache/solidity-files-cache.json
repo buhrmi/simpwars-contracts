@@ -907,8 +907,8 @@
       ]
     },
     "/home/buhrmi/simpwars-contracts/contracts/SimpWars.sol": {
-      "lastModificationDate": 1612263872430,
-      "contentHash": "2cd0cb6eed44ccc61187b725805b42ea",
+      "lastModificationDate": 1612318455770,
+      "contentHash": "f1e05e4283a408b71283fb8e6aa3ba87",
       "sourceName": "contracts/SimpWars.sol",
       "solcConfig": {
         "version": "0.7.3",
@@ -943,7 +943,6 @@
       ],
       "artifacts": [
         "OwnableDelegateProxy",
-        "Pricing",
         "ProxyRegistry",
         "SimpWars"
       ]
@@ -2610,40 +2609,6 @@
       ],
       "artifacts": [
         "SafeCast"
-      ]
-    },
-    "/home/buhrmi/simpwars-contracts/contracts/AlternativePricing.sol": {
-      "lastModificationDate": 1611791579431,
-      "contentHash": "3944abdbea04ebfcd75134671d0d2f02",
-      "sourceName": "contracts/AlternativePricing.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "AltPricing"
       ]
     },
     "/home/buhrmi/simpwars-contracts/node_modules/hardhat/console.sol": {
