@@ -2,7 +2,7 @@
 
 > When simps go to the moon 🚀
 
-Hello and welcome. This repo contains the smart contract that allows anyone to mint a simp on the Ethereum blockchain. A simp is a tokenized Twitch streamer. Simps are needed to participate in the great upcoming [SimpWars](https://github.com/buhrmi/simpwars).
+Hello and welcome. This repo contains the smart contract that allows anyone to tokenize Twitch streamers on the Ethereum blockchain. A tokenized streamer is called a simp. Simps are needed to participate in the upcoming [SimpWars](https://github.com/buhrmi/simpwars).
 
 The initial minting cost is 1 ETH and doubles every time a new simp is minted. To prevent the price from skyrocketing the price gradually decreases by 50% every 24 hours.
 
@@ -10,7 +10,7 @@ No simps are pre-minted and can be minted by whoever wants them. You can use the
 
 ## Simp Powerlevel
 
-Every 24 hours, your simps emit 10 Power Tokens (PT). These Power Tokens can be burned to increase your simps' on-chain powerlevel. A higher powerlevel gives your simp more power to survive in combat during the great SimpWars.
+Every 24 hours, your simps emit 10 Power Tokens (PT). These Power Tokens can be burned to increase your simps' on-chain powerlevel. A higher powerlevel gives your simp more power to survive in combat during the upcoming SimpWars.
 
 To increase the powerlevel, call the `powerup` function with the simp ID and the amount of Powerup Tokens you would like to burn. You can powerup simps that you own yourself, and also your friend's simps that have `powerupAccepted` set to true.
 
