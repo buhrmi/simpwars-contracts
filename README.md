@@ -10,7 +10,7 @@ Only **one** simp can be minted per streamer. No simps are pre-minted. To mint a
 
 ## Simp Powerlevel
 
-Every 24 hours, your simps emit 10 Power Tokens (PT). These Power Tokens can be burned to increase your simps' on-chain powerlevel. A higher powerlevel gives your simp more power to survive in combat during the upcoming Simp Wars.
+Every 24 hours, your simps emit 10 Power Tokens (PT). These Power Tokens can be burned to increase your simps' on-chain powerlevel. A higher powerlevel increases the chances of your simp to survive in combat during the upcoming Simp Wars.
 
 To increase the powerlevel, call the `powerup` function with the simp ID and the amount of Powerup Tokens you would like to burn. You can powerup simps that you own yourself, and also your friend's simps that have `powerupAccepted` set to true.
 
