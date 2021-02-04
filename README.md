@@ -42,7 +42,8 @@ PowerToken deployed to: 0xB579DaBB15Db575aac99659aae36D8e8Dea0671B
 You can then verify the contracts on Etherscan with
 
 ```
-npx hardhat verify --network rinkeby DEPLOYED_CONTRACT_ADDRESS
+npx hardhat verify --network rinkeby POWERTOKEN_ADDRERSS
+npx hardhat verify --network rinkeby SIMPWARS_ADDRESS "POWERTOKEN_ADDRERSS"
 ```
 
 ## Running tests
