@@ -38,12 +38,12 @@ contract SimpWars is ERC721, Ownable {
     address public proxyRegistryAddress = 0xF57B2c51dED3A29e6891aba85459d600256Cf317; // Rinkeby
     //address public proxyRegistryAddress = 0xa5409ec958c83c3f309868babaca7c86dcb077c1; // Mainnet
     
-    string public contractURI = "https://simpwars.loca.lt"; // Rinkeby
+    string public contractURI = "https://rinkeby.simpwars.net"; // Rinkeby
     //string public contractURI = "https://simpwars.net"; // Mainnet
     
     constructor(address _tokenAddress) ERC721("SimpWars", "SIMPS") {
       tokenAddress = _tokenAddress;
-      _setBaseURI("https://simpwars.loca.lt/metadata/twitch/"); // Rinkeby
+      _setBaseURI("https://rinkeby.simpwars.net/metadata/twitch/"); // Rinkeby
       //_setBaseURI("https://simpwars.net/metadata/twitch/"); // Mainnet
     }
 
