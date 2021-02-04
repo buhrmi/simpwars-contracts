@@ -17,7 +17,7 @@ contract ProxyRegistry {
 contract SimpWars is ERC721, Ownable {
     using SafeMath for uint256;
 
-    uint256 public SECONDS_IN_A_DAY = 864000;
+    uint256 constant SECONDS_IN_A_DAY = 864000;
     uint256 constant FALLOFF_BASE = 0xFFFF79679FF758000000000000000000; // = 0.9999919775 * 2^128
 
     uint256 public nextPrice = 1 ether;
