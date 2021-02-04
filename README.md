@@ -23,10 +23,23 @@ The contract is not yet deployed. This will happen live on stream at a future da
 This is a [Hardhat](https://hardhat.org) project. To deploy (for example on Rinkeby) run 
 
 ```
-npx hardhat run --network Rinkeby scripts/deploy.js
+npx hardhat run --network rinkeby scripts/deploy.js
 ```
 
-you can then verify the contract on Etherscan with
+You should see something like
+
+```
+Deploying Powertoken...
+Deploying SimpWars...
+Linking Contracts...
+Done.
+--------------------------------------------------------------------
+SimpWars deployed to:   0xf4AEfC4ed943C23FECE3dE15c406Bc79c7d95710
+PowerToken deployed to: 0xB579DaBB15Db575aac99659aae36D8e8Dea0671B
+--------------------------------------------------------------------
+```
+
+You can then verify the contracts on Etherscan with
 
 ```
 npx hardhat verify --network rinkeby DEPLOYED_CONTRACT_ADDRESS
