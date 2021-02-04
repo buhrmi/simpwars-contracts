@@ -34,8 +34,8 @@ Deploying SimpWars...
 Linking Contracts...
 Done.
 --------------------------------------------------------------------
-SimpWars deployed to:   0xf4AEfC4ed943C23FECE3dE15c406Bc79c7d95710
 PowerToken deployed to: 0xB579DaBB15Db575aac99659aae36D8e8Dea0671B
+SimpWars deployed to:   0xf4AEfC4ed943C23FECE3dE15c406Bc79c7d95710
 --------------------------------------------------------------------
 ```
 

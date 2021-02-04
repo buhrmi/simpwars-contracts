@@ -13,8 +13,8 @@ async function main() {
 
   console.log("Done.")
   console.log("--------------------------------------------------------------------")
-  console.log("SimpWars deployed to:  ", simpWars.address);
   console.log("PowerToken deployed to:", powerToken.address);
+  console.log("SimpWars deployed to:  ", simpWars.address);
   console.log("--------------------------------------------------------------------")
 }
 
