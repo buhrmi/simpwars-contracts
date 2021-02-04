@@ -23,9 +23,16 @@ contract SimpWars is ERC721, Ownable {
     uint256 public nextPrice = 1 ether;
     uint256 public lastPurchase = block.timestamp;
 
+    // Keeps track of the order of minting
+    uint256[] simps;
 
+    // Stores the current powerlevel of each simp
     mapping(uint => uint) public powerlevels;
+
+    // Stores the time when a simp has been minted
     mapping(uint => uint) public timestamps;
+
+    // Whether or not anybody may powerup this simp
     mapping(uint => bool) public powerupsAccepted;
 
     event SimpPowerup(uint indexed streamerId, uint256 amount);
@@ -118,6 +125,8 @@ contract SimpWars is ERC721, Ownable {
 
         // Save the next mint price
         nextPrice = effectivePrice * 2;
+
+        simps.push(streamerId);
 
         // Mint the ERC721 Token
         _mint(msg.sender, streamerId);
