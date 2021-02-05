@@ -33,6 +33,7 @@ contract SimpWars is ERC721, Ownable {
     mapping(uint => bool) public powerupsAccepted;
 
     event SimpPowerup(uint indexed streamerId, uint256 amount);
+    event Mint(uint indexed streamerId, uint256 amount);
 
     address public tokenAddress;
     address public proxyRegistryAddress = 0xF57B2c51dED3A29e6891aba85459d600256Cf317; // Rinkeby
@@ -60,32 +61,32 @@ contract SimpWars is ERC721, Ownable {
         return effectivePrice;
     }
 
-    function getPowerlevel(uint256 simpId) public view returns (uint256) {
-        return powerlevels[simpId];
+    function getPowerlevel(uint256 streamerId) public view returns (uint256) {
+        return powerlevels[streamerId];
     }
 
-    function powerupAccepted(uint256 simpId) public view returns (bool) {
-        return powerupsAccepted[simpId];
+    function powerupAccepted(uint256 streamerId) public view returns (bool) {
+        return powerupsAccepted[streamerId];
     }
 
-    function mintedTimestamp(uint256 simpId) public view returns (uint256) {
-        return timestamps[simpId];
+    function mintedTimestamp(uint256 streamerId) public view returns (uint256) {
+        return timestamps[streamerId];
     }
 
-    function setPowerupAccepted(uint256 simpId, bool allowed) public {
-        require(ownerOf(simpId) == msg.sender);
-        powerupsAccepted[simpId] = allowed;
+    function setPowerupAccepted(uint256 streamerId, bool allowed) public {
+        require(ownerOf(streamerId) == msg.sender);
+        powerupsAccepted[streamerId] = allowed;
     }
 
     /**
      * @dev Powerup the simp and burn the Simp Powerup Tokens 
     */
-    function powerup(uint256 simpId, uint256 amount) public {
-        require(ownerOf(simpId) == msg.sender || powerupsAccepted[simpId], "you don't have permission to powerup this simp");
-        powerlevels[simpId] = powerlevels[simpId].add(amount);
+    function powerup(uint256 streamerId, uint256 amount) public {
+        require(ownerOf(streamerId) == msg.sender || powerupsAccepted[streamerId], "you don't have permission to powerup this simp");
+        powerlevels[streamerId] = powerlevels[streamerId].add(amount);
         ERC20Burnable(tokenAddress).transferFrom(msg.sender, address(this), amount);
         ERC20Burnable(tokenAddress).burn(amount);
-        emit SimpPowerup(simpId, amount);
+        emit SimpPowerup(streamerId, amount);
     }
 
     /**
@@ -122,6 +123,8 @@ contract SimpWars is ERC721, Ownable {
 
         // Save the next mint price
         nextPrice = effectivePrice * 2;
+
+        emit Mint(streamerId, effectivePrice);
 
         // Mint the ERC721 Token
         _mint(msg.sender, streamerId);

@@ -53,7 +53,7 @@ describe("SimpWars", function() {
 
     const url = await simpwars.tokenURI(2387476);
 
-    expect(url).to.equal('https://simpwars.loca.lt/metadata/twitch/2387476')
+    expect(url).to.equal('https://rinkeby.simpwars.net/metadata/twitch/2387476')
   });
 
   it("price increases and falls off", async function() {
