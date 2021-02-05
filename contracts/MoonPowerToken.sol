@@ -1,3 +1,8 @@
+// MOON POWER TOKEN
+//
+// The perfect token to upgrade your Simps
+// Play now at https://simpwars.net
+
 // SPDX-License-Identifier: WTFPL
 
 pragma solidity >=0.6.0 <0.8.0;
