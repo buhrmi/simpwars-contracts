@@ -85,7 +85,7 @@ describe("SimpWars", function() {
   it("emits 10 power tokens per day that can be claimed", async function() {
     const address = (await ethers.getSigners())[0].address;
 
-      const PowerToken = await ethers.getContractFactory("PowerToken");
+      const PowerToken = await ethers.getContractFactory("MoonPowerToken");
       const powerToken = await PowerToken.deploy();
       const powerTokenContract = await powerToken.deployed();
 
@@ -121,7 +121,7 @@ describe("SimpWars", function() {
 
   it("accepts Power Tokens for powerups", async function() {
     const [owner, account2] = (await ethers.getSigners())
-    const PowerToken = await ethers.getContractFactory("PowerToken");
+    const PowerToken = await ethers.getContractFactory("MoonPowerToken");
     const powerToken = await PowerToken.deploy();
     const powerTokenContract = await powerToken.deployed();
     const SimpWars = await ethers.getContractFactory("SimpWars");

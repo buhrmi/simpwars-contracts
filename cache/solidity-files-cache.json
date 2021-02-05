@@ -2681,10 +2681,10 @@
         "ISimpWars"
       ]
     },
-    "/home/buhrmi/simpwars-contracts/contracts/PowerToken.sol": {
-      "lastModificationDate": 1612330105520,
-      "contentHash": "bdf5b076d0591e58753ff4933035c080",
-      "sourceName": "contracts/PowerToken.sol",
+    "/home/buhrmi/simpwars-contracts/contracts/MoonPowerToken.sol": {
+      "lastModificationDate": 1612521920640,
+      "contentHash": "ba0cbf45034d2aa0676e175ba69c8a7a",
+      "sourceName": "contracts/MoonPowerToken.sol",
       "solcConfig": {
         "version": "0.7.3",
         "settings": {
@@ -2717,7 +2717,7 @@
         ">=0.6.0 <0.8.0"
       ],
       "artifacts": [
-        "PowerToken"
+        "MoonPowerToken"
       ]
     }
   }

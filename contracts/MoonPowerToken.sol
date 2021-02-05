@@ -12,7 +12,7 @@ import "./ISimpWars.sol";
  * SimpPowerToken Contract (The native token of SimpWars)
  * @dev Extends standard ERC20 contract
  */
-contract PowerToken is ERC20Burnable {
+contract MoonPowerToken is ERC20Burnable {
     using SafeMath for uint256;
 
     // Constants
@@ -25,7 +25,7 @@ contract PowerToken is ERC20Burnable {
 
     address private _simpsAddress;
 
-    constructor() ERC20("Power Token", "PT") {}
+    constructor() ERC20("Moon Power Token", "MPT") {}
 
     /**
      * @dev When accumulated SPTs have last been claimed for a Simp index
