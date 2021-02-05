@@ -1,7 +1,7 @@
 async function main() {
   // We get the contract to deploy
   console.log("Deploying Powertoken...")
-  const PowerToken = await ethers.getContractFactory("PowerToken");
+  const PowerToken = await ethers.getContractFactory("MoonPowerToken");
   const powerToken = await PowerToken.deploy();
   const powerTokenContract = await powerToken.deployed();
   console.log("Deploying SimpWars...")
