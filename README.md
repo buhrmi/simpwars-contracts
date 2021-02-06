@@ -8,10 +8,9 @@ To mint a simp, call the `mint` function with the Twitch User ID and pay the req
 
 ## Moon Tokens
 
-Every 24 hours, your simps mine 10 Moon Tokens (MT). These tokens can be burned to increase your simps' on-chain powerlevel. A higher powerlevel increases the chances of your simp to survive in combat against the forces of the FUD.
+Moon Tokens are ERC20 tokens that can be burned to increase your simps' on-chain powerlevel. A higher powerlevel increases the chances of your simps to survive in combat against the forces of the FUD. Simps mine Moon Tokens for you on a daily basis. You can check how many Moon Tokens they have mined with the `accumulated(simpID)` function. You can claim all mined tokens at once by calling the `claimAll()` function.
 
-To increase the powerlevel, call the `powerup` function with the simp ID and the amount of Power Tokens you would like to burn. You can powerup not only your own simps, but also your friend's simps if they have `powerupAccepted` set to true.
-
+To increase a simp's powerlevel, call the `powerup(simpID, amount)` function with the amount of tokens you would like to burn. You can powerup not only your own simps, but also your friend's simps if they have `powerupAccepted` set to true.
 
 ### Contract Address
 
