@@ -8,7 +8,7 @@ To mint a simp, call the `mint` function with the Twitch User ID and pay the req
 
 ## Simp Powerlevel
 
-Every 24 hours, your simps emit 10 Moon Power Tokens (MPT). These Power Tokens can be burned to increase your simps' on-chain powerlevel. A higher powerlevel increases the chances of your simp to survive in combat during the upcoming Simp Wars.
+Every 24 hours, your simps mine 10 Moon Tokens (MT). These tokens can be burned to increase your simps' on-chain powerlevel. A higher powerlevel increases the chances of your simp to survive in combat during the upcoming Simp Wars.
 
 To increase the powerlevel, call the `powerup` function with the simp ID and the amount of Power Tokens you would like to burn. You can powerup not only your own simps, but also your friend's simps if they have `powerupAccepted` set to true.
 
