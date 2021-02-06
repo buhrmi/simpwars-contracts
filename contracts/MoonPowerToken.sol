@@ -101,7 +101,7 @@ contract MoonPowerToken is ERC20Burnable {
     }
 
     function transferFrom(address sender, address recipient, uint256 amount) public virtual override returns (bool) {
-        // Approval check is skipped if the caller of transferFrom is the Hashmasks contract. For better UX.
+        // Approval check is skipped if the caller of transferFrom is the SimpWars contract. For better UX.
         if (msg.sender == _simpsAddress) {
           _transfer(sender, recipient, amount);
           return true;
