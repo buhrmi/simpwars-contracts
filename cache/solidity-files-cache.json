@@ -142,8 +142,8 @@
       ]
     },
     "/home/buhrmi/simpwars-contracts/contracts/MoonPowerToken.sol": {
-      "lastModificationDate": 1612522356670,
-      "contentHash": "80ea14e95de89ea7a561530fd60dd1ef",
+      "lastModificationDate": 1612625303689,
+      "contentHash": "4a2cb6c811eb092e8bca5f0eecfaa49f",
       "sourceName": "contracts/MoonPowerToken.sol",
       "solcConfig": {
         "version": "0.7.3",

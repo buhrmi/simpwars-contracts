@@ -25,12 +25,16 @@ contract MoonPowerToken is ERC20Burnable {
 
     // Public variables
     uint256 public emissionPerDay = 10 * (10 ** 18);
+    uint256 public calamityTimestamp;
+    bool public calamityOccured;
 
     mapping(uint256 => uint256) private _lastClaim;
 
     address private _simpsAddress;
 
-    constructor() ERC20("Moon Power Token", "MPT") {}
+    event Calamity(uint256 simpId);
+
+    constructor() ERC20("Moon Token", "MT") {}
 
     /**
      * @dev When accumulated SPTs have last been claimed for a Simp index
@@ -61,7 +65,9 @@ contract MoonPowerToken is ERC20Burnable {
 
         require(ISimpWars(_simpsAddress).ownerOf(simpId) != address(0), "Owner cannot be 0 address");
         uint256 lastClaimed = lastClaim(simpId);
-        uint256 totalAccumulated = block.timestamp.sub(lastClaimed).mul(emissionPerDay).div(SECONDS_IN_A_DAY);
+        uint256 timestamp = block.timestamp;
+        if (calamityTimestamp > 0) timestamp = calamityTimestamp;
+        uint256 totalAccumulated = timestamp.sub(lastClaimed).mul(emissionPerDay).div(SECONDS_IN_A_DAY);
         return totalAccumulated;
     }
 
@@ -92,6 +98,14 @@ contract MoonPowerToken is ERC20Burnable {
             if (claimAmount != 0) {
                 totalClaimAmount = totalClaimAmount.add(claimAmount);
                 _lastClaim[simpId] = block.timestamp;
+            }
+
+            // Who is going to trigger the calamity?
+            uint randomnumber = uint(keccak256(abi.encodePacked(block.timestamp, blockhash(block.number)))) % 1000000;
+            if (randomnumber == 123456) {
+                calamityOccured = true;
+                calamityTimestamp = block.timestamp;
+                emit Calamity(simpId);
             }
         }
 
