@@ -14,6 +14,11 @@ Moon Tokens are ERC20 tokens that can be burned to increase your simps' on-chain
 
 To increase a simp's powerlevel, call the `powerup(simpID, amount)` function with the amount of tokens you would like to burn. You can powerup not only your own simps, but also your friend's simps if they have `powerupAccepted` set to true.
 
+
+### The Calamity
+
+At one point in the future, a calamity will be triggered and the moon will explode. When that happens, no new Moon Tokens can be mined anymore. This is a random event that can occur at any point in time which can not be predicted. The amount of Moon Tokens will decrease, until one day the last Moon Token has been used.
+
 ### Contract Address
 
 The contract is not yet deployed. This will happen live on stream at a future date. Please join the [Discord Server](https://discord.gg/VH2haTs) for announcements.
