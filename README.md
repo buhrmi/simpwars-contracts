@@ -17,7 +17,7 @@ To increase a simp's powerlevel, call the `powerup(simpID, amount)` function wit
 
 ### The Calamity
 
-At one point in the future, a calamity will be triggered and the moon will explode. When that happens, no new Moon Tokens can be mined anymore. This is a random event that can occur at any point in time which can not be predicted. The amount of Moon Tokens will decrease, until one day the last Moon Token has been used.
+At one point in the future, a calamity will be triggered and the moon will explode. When that happens, no new Moon Tokens can be mined anymore. This is a random event that can occur at any point in time which can not be predicted. After the calamity occured, Moon Tokens can only be burned, but not mined. The amount of Moon Tokens will slowly decrease, until one day the last Moon Token has been used up.
 
 ### Contract Address
 
