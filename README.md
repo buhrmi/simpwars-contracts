@@ -6,6 +6,8 @@ Anyone can mint new simps for a small minting fee. This fee starts at 0.1 ETH an
 
 To mint a simp, call the `mint` function with the Twitch User ID and pay the required amount of ETH. If you submit too much Eth, the contract will send the remaining ETH back to you. You can check the `price` function to see the current minting fee. Each simp is unique and can exist only **once**. No simps are pre-minted. 
 
+All your simps mine 10 Moon Tokens per day.
+
 ## Moon Tokens
 
 Moon Tokens are ERC20 tokens that can be burned to increase your simps' on-chain powerlevel. A higher powerlevel increases the chances of your simps to survive in combat against the forces of the FUD. Simps mine Moon Tokens for you on a daily basis. You can check how many Moon Tokens they have mined with the `accumulated(simpID)` function. You can claim all mined tokens at once by calling the `claimAll()` function.
